@@ -2,6 +2,13 @@
 [Dd]ebug/
 [Rr]elease/
 x64/
+.vs/
+*.dll
+*.lib
+*.exe
+*.pdb
+*.idb
+*.exp
 
 *.opensdf
 *.sdf
