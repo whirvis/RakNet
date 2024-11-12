@@ -100,12 +100,12 @@ int main(void)
 		{
 			ch=0;
 			printf("Which IP? (Press enter for 127.0.0.1)");
-			gets(str);
+			gets_s(str);
 			if (str[0]==0)
 				strcpy(str, "127.0.0.1");
 			char port[64];
 			printf("Which port? (Press enter for 60000)");
-			gets(port);
+			gets_s(port);
 			if (port[0]==0)
 				strcpy(port, "60000");
 			ConnectionAttemptResult car = rakPeer->Connect(str, atoi(port), 0, 0, 0);

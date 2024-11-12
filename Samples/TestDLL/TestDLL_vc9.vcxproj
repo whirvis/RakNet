@@ -75,7 +75,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)Lib\RakNet_DLL_$(Configuration)_$(Platform).dll</Command>
+      <Command>copy $(SolutionDir)Lib\RakNet_VS2017_DLL_$(Configuration)_$(Platform).dll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -98,7 +98,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)Lib\RakNet_DLL_$(Configuration)_$(Platform).dll</Command>
+      <Command>copy $(SolutionDir)Lib\RakNet_VS2017_DLL_$(Configuration)_$(Platform).dll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

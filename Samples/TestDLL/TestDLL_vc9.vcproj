@@ -92,7 +92,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy $(SolutionDir)Lib\RakNet_DLL_$(ConfigurationName)_$(PlatformName).dll"
+				CommandLine="copy $(SolutionDir)Lib\RakNet_VS2017_DLL_$(ConfigurationName)_$(PlatformName).dll"
 			/>
 		</Configuration>
 		<Configuration
@@ -169,7 +169,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy $(SolutionDir)Lib\RakNet_DLL_$(ConfigurationName)_$(PlatformName).dll"
+				CommandLine="copy $(SolutionDir)Lib\RakNet_VS2017_DLL_$(ConfigurationName)_$(PlatformName).dll"
 			/>
 		</Configuration>
 	</Configurations>

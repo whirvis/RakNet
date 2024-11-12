@@ -49,7 +49,7 @@ int main()
 	printf("Started on %s\n", rakPeer->GetMyBoundAddress().ToString(true));
 	BitStream contextBs;
 	contextBs.Write(RakString("Our guid is %s\n", rakPeer->GetGuidFromSystemAddress(RakNet::UNASSIGNED_SYSTEM_ADDRESS).ToString()));
-	fcm2.SetMyContext(&contextBs);
+	// fcm2.SetMyContext(&contextBs);
 
 //	PacketLogger packetLogger;
 //	rakPeer->AttachPlugin(&packetLogger);
@@ -143,7 +143,7 @@ int main()
 				for (int i=0; i < participantList.Size(); i++)
 				{
 					BitStream userContext;
-					fcm2.GetParticipantContext(participantList[i], &userContext);
+					// fcm2.GetParticipantContext(participantList[i], &userContext);
 					RakString str;
 					userContext.Read(str);
 					printf("%i. %s: %s", i+1, participantList[i].ToString(), str.C_String());
