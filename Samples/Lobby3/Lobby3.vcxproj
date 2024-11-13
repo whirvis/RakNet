@@ -23,6 +23,7 @@
     <ProjectGuid>{A0A60230-5642-4315-9011-8BAC2E03C66E}</ProjectGuid>
     <RootNamespace>Lobby3</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -67,20 +68,22 @@
     <_ProjectFileVersion>17.0.34511.75</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir>$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\$(TargetName)</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\$(TargetName)</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir>$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\$(TargetName)</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\$(TargetName)</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -99,6 +102,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Link>
     <PostBuildEvent>
       <Command>copy .\..\..\DependentExtensions\openssl-1.0.0d\bin\*.dll .\</Command>
@@ -120,6 +124,7 @@
       <AdditionalDependencies>ws2_32.lib;./../../DependentExtensions/openssl-1.0.2d/lib64/libeay32MD.lib;./../../DependentExtensions/openssl-1.0.2d/lib64/ssleay32MD.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Link>
     <PostBuildEvent>
       <Command>copy .\..\..\DependentExtensions\openssl-1.0.0d\bin\*.dll .\</Command>
@@ -144,6 +149,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Link>
     <PostBuildEvent>
       <Command>copy .\..\..\DependentExtensions\openssl-1.0.0d\bin\*.dll .\</Command>
@@ -168,6 +174,7 @@
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Link>
     <PostBuildEvent>
       <Command>copy .\..\..\DependentExtensions\openssl-1.0.0d\bin\*.dll .\</Command>

@@ -23,6 +23,7 @@
     <ProjectGuid>{01A7ED79-2098-4BB5-B5A0-8293210BCB93}</ProjectGuid>
     <RootNamespace>AutopatcherServer_MySQL</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -69,20 +70,22 @@
     <_ProjectFileVersion>17.0.34511.75</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>Debug\</OutDir>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\$(TargetName)</OutDir>
     <IntDir>Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\$(TargetName)</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>Release\</OutDir>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\$(TargetName)</OutDir>
     <IntDir>Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\$(TargetName)</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -102,7 +105,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>./../../Lib/RakNet_VS2017_LibStatic_Debug_Win32.lib;ws2_32.lib;./../../DependentExtensions\Autopatcher\AutopatcherMySQLRepository\Debug\AutopatcherMySQLRepository.lib;C:\Program Files (x86)\MySQL\MySQL Server 5.1\lib\opt\libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)AutopatcherServer.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -135,7 +138,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>./../../Lib/RakNet_VS2017_LibStatic_Debug_Win32.lib;ws2_32.lib;./../../DependentExtensions\Autopatcher\AutopatcherMySQLRepository\Debug\AutopatcherMySQLRepository.lib;C:\Program Files (x86)\MySQL\MySQL Server 5.1\lib\opt\libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)AutopatcherServer.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -164,7 +167,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>./../../Lib/RakNet_VS2017_LibStatic_Release_Win32.lib;ws2_32.lib;./../../DependentExtensions\Autopatcher\AutopatcherMySQLRepository\Release\AutopatcherMySQLRepository.lib;C:\Program Files (x86)\MySQL\MySQL Server 5.1\lib\opt\libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)AutopatcherServer.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
@@ -195,7 +198,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>./../../Lib/RakNet_VS2017_LibStatic_Release_Win32.lib;ws2_32.lib;./../../DependentExtensions\Autopatcher\AutopatcherMySQLRepository\Release\AutopatcherMySQLRepository.lib;C:\Program Files (x86)\MySQL\MySQL Server 5.1\lib\opt\libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)AutopatcherServer.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>

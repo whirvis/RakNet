@@ -14,9 +14,6 @@
     <ClCompile Include="ServerClientTest2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\ReplicatedLogin\ReplicatedLogin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />

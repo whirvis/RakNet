@@ -24,6 +24,7 @@
     <ProjectGuid>{1982C73F-3D1C-46A6-9DFB-C7B03310365B}</ProjectGuid>
     <RootNamespace>Demo_BspCollision</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -70,20 +71,22 @@
     <_ProjectFileVersion>17.0.34511.75</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(Configuration)\</OutDir>
+    <OutDir>$(OutDir)$(Platform)\$(TargetName)$(TargetExt)</OutDir>
     <IntDir>$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(OutDir)$(Platform)\$(TargetName)$(TargetExt)</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(Configuration)\</OutDir>
+    <OutDir>$(OutDir)$(Platform)\$(TargetName)$(TargetExt)</OutDir>
     <IntDir>$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(OutDir)$(Platform)\$(TargetName)$(TargetExt)</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -101,7 +104,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>OgreMain_d.lib;OIS_d.lib;ReferenceAppLayer_d.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Demo_BspCollision.exe</OutputFile>
+      <OutputFile>$(OutDir)$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OGRE_HOME)\lib\;..\..\..\Dependencies\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)Demo_BspCollision.pdb</ProgramDatabaseFile>
@@ -133,7 +136,7 @@ copy $(OGRE_HOME)\bin\$(Configuration)\Media.cfg .\
     </ClCompile>
     <Link>
       <AdditionalDependencies>OgreMain_d.lib;OIS_d.lib;ReferenceAppLayer_d.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Demo_BspCollision.exe</OutputFile>
+      <OutputFile>$(OutDir)$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OGRE_HOME)\lib\;..\..\..\Dependencies\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)Demo_BspCollision.pdb</ProgramDatabaseFile>
@@ -169,7 +172,7 @@ copy $(OGRE_HOME)\bin\$(Configuration)\Media.cfg .\
     </ClCompile>
     <Link>
       <AdditionalDependencies>OgreMain.lib;OIS.lib;ReferenceAppLayer.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Demo_BspCollision.exe</OutputFile>
+      <OutputFile>$(OutDir)$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OGRE_HOME)\lib\;..\..\..\Dependencies\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -206,7 +209,7 @@ copy $(OGRE_HOME)\bin\$(Configuration)\Media.cfg .\
     </ClCompile>
     <Link>
       <AdditionalDependencies>OgreMain.lib;OIS.lib;ReferenceAppLayer.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Demo_BspCollision.exe</OutputFile>
+      <OutputFile>$(OutDir)$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OGRE_HOME)\lib\;..\..\..\Dependencies\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
