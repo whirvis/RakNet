@@ -14,9 +14,6 @@
 ///
 
 
-#if defined(_MSC_VER) && _MSC_VER < 1299 // VC6 doesn't support template specialization
-#include "BitStream_NoTemplate.h"
-#else
 
 #ifndef RAKNET_BITSTREAM_H
 #define RAKNET_BITSTREAM_H
@@ -2044,5 +2041,3 @@ namespace RakNet
 #endif
 
 #endif /* RAKNET_BITSTREAM_H */
-
-#endif // VC6
