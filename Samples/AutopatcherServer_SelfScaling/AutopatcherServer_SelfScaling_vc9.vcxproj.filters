@@ -333,9 +333,6 @@
     <ClCompile Include="..\..\Source\VariadicSQLParser.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\VitaIncludes.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\WSAStartupSingleton.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
@@ -674,9 +671,6 @@
     <ClInclude Include="..\..\Source\PluginInterface2.h">
       <Filter>RakNet</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\PS3Includes.h">
-      <Filter>RakNet</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\Rackspace.h">
       <Filter>RakNet</Filter>
     </ClInclude>
@@ -860,16 +854,10 @@
     <ClInclude Include="..\..\Source\VariadicSQLParser.h">
       <Filter>RakNet</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\VitaIncludes.h">
-      <Filter>RakNet</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\WindowsIncludes.h">
       <Filter>RakNet</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\WSAStartupSingleton.h">
-      <Filter>RakNet</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\XBox360Includes.h">
       <Filter>RakNet</Filter>
     </ClInclude>
     <ClInclude Include="..\..\DependentExtensions\bzip2-1.0.6\bzlib.h">

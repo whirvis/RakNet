@@ -322,7 +322,6 @@
     <ClCompile Include="..\..\Source\VariableDeltaSerializer.cpp" />
     <ClCompile Include="..\..\Source\VariableListDeltaTracker.cpp" />
     <ClCompile Include="..\..\Source\VariadicSQLParser.cpp" />
-    <ClCompile Include="..\..\Source\VitaIncludes.cpp" />
     <ClCompile Include="..\..\Source\WSAStartupSingleton.cpp" />
     <ClCompile Include="..\..\Source\_FindFirst.cpp" />
     <ClCompile Include="..\CloudServer\CloudServerHelper.cpp" />
@@ -429,7 +428,6 @@
     <ClInclude Include="..\..\Source\PacketPool.h" />
     <ClInclude Include="..\..\Source\PacketPriority.h" />
     <ClInclude Include="..\..\Source\PluginInterface2.h" />
-    <ClInclude Include="..\..\Source\PS3Includes.h" />
     <ClInclude Include="..\..\Source\Rackspace.h" />
     <ClInclude Include="..\..\Source\RakAlloca.h" />
     <ClInclude Include="..\..\Source\RakAssert.h" />
@@ -490,10 +488,8 @@
     <ClInclude Include="..\..\Source\VariableDeltaSerializer.h" />
     <ClInclude Include="..\..\Source\VariableListDeltaTracker.h" />
     <ClInclude Include="..\..\Source\VariadicSQLParser.h" />
-    <ClInclude Include="..\..\Source\VitaIncludes.h" />
     <ClInclude Include="..\..\Source\WindowsIncludes.h" />
     <ClInclude Include="..\..\Source\WSAStartupSingleton.h" />
-    <ClInclude Include="..\..\Source\XBox360Includes.h" />
     <ClInclude Include="..\..\Source\_FindFirst.h" />
     <ClInclude Include="..\CloudServer\CloudServerHelper.h" />
   </ItemGroup>

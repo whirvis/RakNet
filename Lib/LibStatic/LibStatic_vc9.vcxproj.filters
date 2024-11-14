@@ -577,9 +577,6 @@
     <ClInclude Include="..\..\Source\PluginInterface2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\PS3Includes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\Rackspace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -760,16 +757,10 @@
     <ClInclude Include="..\..\Source\VariadicSQLParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\VitaIncludes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\WindowsIncludes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\WSAStartupSingleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\XBox360Includes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
