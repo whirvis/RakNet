@@ -233,20 +233,13 @@
     <ClCompile Include="..\..\Source\PacketLogger.cpp" />
     <ClCompile Include="..\..\Source\PacketOutputWindowLogger.cpp" />
     <ClCompile Include="..\..\Source\PluginInterface2.cpp" />
-    <ClCompile Include="..\..\Source\PS4Includes.cpp" />
     <ClCompile Include="..\..\Source\Rackspace.cpp" />
     <ClCompile Include="..\..\Source\RakMemoryOverride.cpp" />
     <ClCompile Include="..\..\Source\RakNetCommandParser.cpp" />
     <ClCompile Include="..\..\Source\RakNetSocket.cpp" />
     <ClCompile Include="..\..\Source\RakNetSocket2.cpp" />
-    <ClCompile Include="..\..\Source\RakNetSocket2_360_720.cpp" />
     <ClCompile Include="..\..\Source\RakNetSocket2_Berkley.cpp" />
     <ClCompile Include="..\..\Source\RakNetSocket2_Berkley_NativeClient.cpp" />
-    <ClCompile Include="..\..\Source\RakNetSocket2_NativeClient.cpp" />
-    <ClCompile Include="..\..\Source\RakNetSocket2_PS3_PS4.cpp" />
-    <ClCompile Include="..\..\Source\RakNetSocket2_PS4.cpp" />
-    <ClCompile Include="..\..\Source\RakNetSocket2_Vita.cpp" />
-    <ClCompile Include="..\..\Source\RakNetSocket2_WindowsStore8.cpp" />
     <ClCompile Include="..\..\Source\RakNetSocket2_Windows_Linux.cpp" />
     <ClCompile Include="..\..\Source\RakNetSocket2_Windows_Linux_360.cpp" />
     <ClCompile Include="..\..\Source\RakNetStatistics.cpp" />
@@ -287,7 +280,6 @@
     <ClCompile Include="..\..\Source\VariableDeltaSerializer.cpp" />
     <ClCompile Include="..\..\Source\VariableListDeltaTracker.cpp" />
     <ClCompile Include="..\..\Source\VariadicSQLParser.cpp" />
-    <ClCompile Include="..\..\Source\VitaIncludes.cpp" />
     <ClCompile Include="..\..\Source\WSAStartupSingleton.cpp" />
     <ClCompile Include="..\..\Source\_FindFirst.cpp" />
     <ClCompile Include="main.cpp" />
@@ -334,7 +326,6 @@
     <ClInclude Include="..\..\Source\DS_WeightedGraph.h" />
     <ClInclude Include="..\..\Source\DynDNS.h" />
     <ClInclude Include="..\..\Source\EmailSender.h" />
-    <ClInclude Include="..\..\Source\EmptyHeader.h" />
     <ClInclude Include="..\..\Source\EpochTimeToString.h" />
     <ClInclude Include="..\..\Source\Export.h" />
     <ClInclude Include="..\..\Source\FileList.h" />
@@ -379,8 +370,6 @@
     <ClInclude Include="..\..\Source\PacketPool.h" />
     <ClInclude Include="..\..\Source\PacketPriority.h" />
     <ClInclude Include="..\..\Source\PluginInterface2.h" />
-    <ClInclude Include="..\..\Source\PS3Includes.h" />
-    <ClInclude Include="..\..\Source\PS4Includes.h" />
     <ClInclude Include="..\..\Source\Rackspace.h" />
     <ClInclude Include="..\..\Source\RakAlloca.h" />
     <ClInclude Include="..\..\Source\RakAssert.h" />
@@ -441,10 +430,8 @@
     <ClInclude Include="..\..\Source\VariableDeltaSerializer.h" />
     <ClInclude Include="..\..\Source\VariableListDeltaTracker.h" />
     <ClInclude Include="..\..\Source\VariadicSQLParser.h" />
-    <ClInclude Include="..\..\Source\VitaIncludes.h" />
     <ClInclude Include="..\..\Source\WindowsIncludes.h" />
     <ClInclude Include="..\..\Source\WSAStartupSingleton.h" />
-    <ClInclude Include="..\..\Source\XBox360Includes.h" />
     <ClInclude Include="..\..\Source\_FindFirst.h" />
   </ItemGroup>
   <ItemGroup>

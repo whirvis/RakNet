@@ -177,9 +177,6 @@
     <ClCompile Include="..\..\Source\PluginInterface2.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\PS4Includes.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Rackspace.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
@@ -195,34 +192,16 @@
     <ClCompile Include="..\..\Source\RakNetSocket2.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\RakNetSocket2_360_720.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\RakNetSocket2_Berkley.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\RakNetSocket2_Berkley_NativeClient.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\RakNetSocket2_NativeClient.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\RakNetSocket2_PS3_PS4.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\RakNetSocket2_PS4.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\RakNetSocket2_Vita.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\RakNetSocket2_Windows_Linux.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\RakNetSocket2_Windows_Linux_360.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\RakNetSocket2_WindowsStore8.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\RakNetStatistics.cpp">
@@ -340,9 +319,6 @@
       <Filter>RakNet</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\VariadicSQLParser.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\VitaIncludes.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\WSAStartupSingleton.cpp">
@@ -471,9 +447,6 @@
       <Filter>RakNet</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\EmailSender.h">
-      <Filter>RakNet</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\EmptyHeader.h">
       <Filter>RakNet</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\EpochTimeToString.h">
@@ -606,12 +579,6 @@
       <Filter>RakNet</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\PluginInterface2.h">
-      <Filter>RakNet</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\PS3Includes.h">
-      <Filter>RakNet</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\PS4Includes.h">
       <Filter>RakNet</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Rackspace.h">
@@ -797,16 +764,10 @@
     <ClInclude Include="..\..\Source\VariadicSQLParser.h">
       <Filter>RakNet</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\VitaIncludes.h">
-      <Filter>RakNet</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\WindowsIncludes.h">
       <Filter>RakNet</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\WSAStartupSingleton.h">
-      <Filter>RakNet</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\XBox360Includes.h">
       <Filter>RakNet</Filter>
     </ClInclude>
   </ItemGroup>
