@@ -9,6 +9,12 @@
 #ifndef RAKNET_SOCKET_INCLUDES_H
 #define RAKNET_SOCKET_INCLUDES_H
 
+/*
+ * TODO: This is temporary, remove this as soon as all other mentions of
+ *  _PP_Instance have been fully stripped from the codebase.
+ */
+#define _PP_Instance_ int
+
 #if defined(_WIN32)
     /*
      * Note that IP_DONTFRAGMENT is different between WinSock 1 and WinSock 2.
