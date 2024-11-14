@@ -64,7 +64,7 @@ BitStream::BitStream()
 {
 	numberOfBitsUsed = 0;
 	//numberOfBitsAllocated = 32 * 8;
-	numberOfBitsAllocated = BITSTREAM_STACK_ALLOCATION_SIZE * 8;
+	numberOfBitsAllocated = RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE * 8;
 	readOffset = 0;
 	//data = ( unsigned char* ) rakMalloc_Ex( 32, _FILE_AND_LINE_ );
 	data = ( unsigned char* ) stackData;
@@ -80,10 +80,10 @@ BitStream::BitStream( const unsigned int initialBytesToAllocate )
 {
 	numberOfBitsUsed = 0;
 	readOffset = 0;
-	if (initialBytesToAllocate <= BITSTREAM_STACK_ALLOCATION_SIZE)
+	if (initialBytesToAllocate <= RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE)
 	{
 		data = ( unsigned char* ) stackData;
-		numberOfBitsAllocated = BITSTREAM_STACK_ALLOCATION_SIZE * 8;
+		numberOfBitsAllocated = RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE * 8;
 	}
 	else
 	{
@@ -108,10 +108,10 @@ BitStream::BitStream( unsigned char* _data, const unsigned int lengthInBytes, bo
 	{
 		if ( lengthInBytes > 0 )
 		{
-			if (lengthInBytes < BITSTREAM_STACK_ALLOCATION_SIZE)
+			if (lengthInBytes < RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE)
 			{
 				data = ( unsigned char* ) stackData;
-				numberOfBitsAllocated = BITSTREAM_STACK_ALLOCATION_SIZE << 3;
+				numberOfBitsAllocated = RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE << 3;
 			}
 			else
 			{
@@ -140,7 +140,7 @@ void BitStream::SetNumberOfBitsAllocated( const BitSize_t lengthInBits )
 
 BitStream::~BitStream()
 {
-	if ( copyData && numberOfBitsAllocated > (BITSTREAM_STACK_ALLOCATION_SIZE << 3))
+	if ( copyData && numberOfBitsAllocated > (RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE << 3))
 		rakFree_Ex( data , _FILE_AND_LINE_ );  // Use realloc and free so we are more efficient than delete and new for resizing
 }
 
@@ -714,7 +714,7 @@ void BitStream::AddBitsAndReallocate( const BitSize_t numberOfBitsToWrite )
 		BitSize_t amountToAllocate = BITS_TO_BYTES( newNumberOfBitsAllocated );
 		if (data==(unsigned char*)stackData)
 		{
-			if (amountToAllocate > BITSTREAM_STACK_ALLOCATION_SIZE)
+			if (amountToAllocate > RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE)
 			{
 				data = ( unsigned char* ) rakMalloc_Ex( (size_t) amountToAllocate, _FILE_AND_LINE_ );
 				RakAssert(data);
@@ -1049,7 +1049,7 @@ void BitStream::WriteAlignedVar16(const char *inByteArray)
 {
 	RakAssert((numberOfBitsUsed&7)==0);
 	AddBitsAndReallocate(2*8);
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 	if (DoEndianSwap())
 	{
 		data[( numberOfBitsUsed >> 3 ) + 0] = inByteArray[1];
@@ -1069,7 +1069,7 @@ bool BitStream::ReadAlignedVar16(char *inOutByteArray)
 	RakAssert((readOffset&7)==0);
 	if ( readOffset + 2*8 > numberOfBitsUsed )
 		return false;
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 	if (DoEndianSwap())
 	{
 		inOutByteArray[0] = data[( readOffset >> 3 ) + 1];
@@ -1089,7 +1089,7 @@ void BitStream::WriteAlignedVar32(const char *inByteArray)
 {
 	RakAssert((numberOfBitsUsed&7)==0);
 	AddBitsAndReallocate(4*8);
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 	if (DoEndianSwap())
 	{
 		data[( numberOfBitsUsed >> 3 ) + 0] = inByteArray[3];
@@ -1113,7 +1113,7 @@ bool BitStream::ReadAlignedVar32(char *inOutByteArray)
 	RakAssert((readOffset&7)==0);
 	if ( readOffset + 4*8 > numberOfBitsUsed )
 		return false;
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 	if (DoEndianSwap())
 	{
 		inOutByteArray[0] = data[( readOffset >> 3 ) + 3];

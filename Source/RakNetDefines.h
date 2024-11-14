@@ -28,10 +28,10 @@
 #define _FILE_AND_LINE_ __FILE__,__LINE__
 #endif
 
-/// Define __BITSTREAM_NATIVE_END to NOT support endian swapping in the BitStream class.  This is faster and is what you should use
+/// Define RAKNET_BITSTREAM_NATIVE_END to NOT support endian swapping in the BitStream class.  This is faster and is what you should use
 /// unless you actually plan to have different endianness systems connect to each other
 /// Enabled by default.
-// #define __BITSTREAM_NATIVE_END
+// #define RAKNET_BITSTREAM_NATIVE_END
 
 /// Maximum (stack) size to use with _alloca before using new and delete instead.
 #ifndef MAX_ALLOCA_STACK_ALLOCATION
@@ -62,8 +62,8 @@
 
 /// Threshold at which to do a malloc / free rather than pushing data onto a fixed stack for the bitstream class
 /// Arbitrary size, just picking something likely to be larger than most packets
-#ifndef BITSTREAM_STACK_ALLOCATION_SIZE
-#define BITSTREAM_STACK_ALLOCATION_SIZE 256
+#ifndef RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE
+#define RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE 256
 #endif
 
 // Redefine if you want to disable or change the target for debug RAKNET_DEBUG_PRINTF

@@ -18,8 +18,8 @@
 #include "BitStream_NoTemplate.h"
 #else
 
-#ifndef __BITSTREAM_H
-#define __BITSTREAM_H
+#ifndef RAKNET_BITSTREAM_H
+#define RAKNET_BITSTREAM_H
 
 #include "RakMemoryOverride.h"
 #include "RakNetDefines.h"
@@ -55,7 +55,7 @@ namespace RakNet
 		BitStream();
 
 		/// \brief Create the bitstream, with some number of bytes to immediately allocate.
-		/// \details There is no benefit to calling this, unless you know exactly how many bytes you need and it is greater than BITSTREAM_STACK_ALLOCATION_SIZE.
+		/// \details There is no benefit to calling this, unless you know exactly how many bytes you need and it is greater than RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE.
 		/// In that case all it does is save you one or more realloc calls.
 		/// \param[in] initialBytesToAllocate the number of bytes to pre-allocate.
 		BitStream( const unsigned int initialBytesToAllocate );
@@ -79,7 +79,7 @@ namespace RakNet
 		void Reset( void );
 
 		/// \brief Bidirectional serialize/deserialize any integral type to/from a bitstream.  
-		/// \details Undefine __BITSTREAM_NATIVE_END if you need endian swapping.
+		/// \details Undefine RAKNET_BITSTREAM_NATIVE_END if you need endian swapping.
 		/// \param[in] writeToBitstream true to write from your data to this bitstream.  False to read from this bitstream and write to your data
 		/// \param[in] inOutTemplateVar The value to write
 		/// \return true if \a writeToBitstream is true.  true if \a writeToBitstream is false and the read was successful.  false if \a writeToBitstream is false and the read was not successful.
@@ -104,8 +104,8 @@ namespace RakNet
 			bool SerializeDelta(bool writeToBitstream, templateType &inOutCurrentValue);
 
 		/// \brief Bidirectional serialize/deserialize any integral type to/from a bitstream.
-		/// \details Undefine __BITSTREAM_NATIVE_END if you need endian swapping.
-		/// If you are not using __BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
+		/// \details Undefine RAKNET_BITSTREAM_NATIVE_END if you need endian swapping.
+		/// If you are not using RAKNET_BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
 		/// For floating point, this is lossy, using 2 bytes for a float and 4 for a double.  The range must be between -1 and +1.
 		/// For non-floating point, this is lossless, but only has benefit if you use less than half the bits of the type
 		/// \param[in] writeToBitstream true to write from your data to this bitstream.  False to read from this bitstream and write to your data
@@ -119,7 +119,7 @@ namespace RakNet
 		/// the current value will be written.  Otherwise, a single bit will be written
 		/// For floating point, this is lossy, using 2 bytes for a float and 4 for a double.  The range must be between -1 and +1.
 		/// For non-floating point, this is lossless, but only has benefit if you use less than half the bits of the type
-		/// If you are not using __BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
+		/// If you are not using RAKNET_BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
 		/// \param[in] writeToBitstream true to write from your data to this bitstream.  False to read from this bitstream and write to your data
 		/// \param[in] inOutCurrentValue The current value to write
 		/// \param[in] lastValue The last value to compare against.  Only used if \a writeToBitstream is true.
@@ -224,13 +224,13 @@ namespace RakNet
 		bool SerializeBits(bool writeToBitstream, unsigned char* inOutByteArray, const BitSize_t numberOfBitsToSerialize, const bool rightAlignedBits = true );
 
 		/// \brief Write any integral type to a bitstream.  
-		/// \details Undefine __BITSTREAM_NATIVE_END if you need endian swapping.
+		/// \details Undefine RAKNET_BITSTREAM_NATIVE_END if you need endian swapping.
 		/// \param[in] inTemplateVar The value to write
 		template <class templateType>
 			void Write(const templateType &inTemplateVar);
 
 		/// \brief Write the dereferenced pointer to any integral type to a bitstream.  
-		/// \details Undefine __BITSTREAM_NATIVE_END if you need endian swapping.
+		/// \details Undefine RAKNET_BITSTREAM_NATIVE_END if you need endian swapping.
 		/// \param[in] inTemplateVar The value to write
 		template <class templateType>
 			void WritePtr(templateType *inTemplateVar);
@@ -249,8 +249,8 @@ namespace RakNet
 			void WriteDelta(const templateType &currentValue);
 
 		/// \brief Write any integral type to a bitstream.  
-		/// \details Undefine __BITSTREAM_NATIVE_END if you need endian swapping.
-		/// If you are not using __BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
+		/// \details Undefine RAKNET_BITSTREAM_NATIVE_END if you need endian swapping.
+		/// If you are not using RAKNET_BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
 		/// For floating point, this is lossy, using 2 bytes for a float and 4 for a double.  The range must be between -1 and +1.
 		/// For non-floating point, this is lossless, but only has benefit if you use less than half the bits of the type
 		/// \param[in] inTemplateVar The value to write
@@ -262,7 +262,7 @@ namespace RakNet
 		/// the current value will be written.  Otherwise, a single bit will be written
 		/// For floating point, this is lossy, using 2 bytes for a float and 4 for a double.  The range must be between -1 and +1.
 		/// For non-floating point, this is lossless, but only has benefit if you use less than half the bits of the type
-		/// If you are not using __BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
+		/// If you are not using RAKNET_BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
 		/// \param[in] currentValue The current value to write
 		/// \param[in] lastValue The last value to compare against
 		template <class templateType>
@@ -273,7 +273,7 @@ namespace RakNet
 			void WriteCompressedDelta(const templateType &currentValue);
 
 		/// \brief Read any integral type from a bitstream.  
-		/// \details Define __BITSTREAM_NATIVE_END if you need endian swapping.
+		/// \details Define RAKNET_BITSTREAM_NATIVE_END if you need endian swapping.
 		/// \param[in] outTemplateVar The value to read
 		/// \return true on success, false on failure.
 		template <class templateType>
@@ -289,10 +289,10 @@ namespace RakNet
 			bool ReadDelta(templateType &outTemplateVar);
 
 		/// \brief Read any integral type from a bitstream.  
-		/// \details Undefine __BITSTREAM_NATIVE_END if you need endian swapping.
+		/// \details Undefine RAKNET_BITSTREAM_NATIVE_END if you need endian swapping.
 		/// For floating point, this is lossy, using 2 bytes for a float and 4 for a double.  The range must be between -1 and +1.
 		/// For non-floating point, this is lossless, but only has benefit if you use less than half the bits of the type
-		/// If you are not using __BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
+		/// If you are not using RAKNET_BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
 		/// \param[in] outTemplateVar The value to read
 		/// \return true on success, false on failure.
 		template <class templateType>
@@ -304,7 +304,7 @@ namespace RakNet
 		/// the current value will be updated.
 		/// For floating point, this is lossy, using 2 bytes for a float and 4 for a double.  The range must be between -1 and +1.
 		/// For non-floating point, this is lossless, but only has benefit if you use less than half the bits of the type
-		/// If you are not using __BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
+		/// If you are not using RAKNET_BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
 		/// ReadCompressedDelta is only valid from a previous call to WriteDelta
 		/// \param[in] outTemplateVar The value to read
 		/// \return true on success, false on failure.
@@ -882,7 +882,7 @@ namespace RakNet
 #endif
 
 		inline static bool DoEndianSwap(void) {
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 			return IsNetworkOrder()==false;
 #else
 			return false;
@@ -930,8 +930,8 @@ namespace RakNet
 		/// true if the internal buffer is copy of the data passed to the constructor
 		bool copyData;
 
-		/// BitStreams that use less than BITSTREAM_STACK_ALLOCATION_SIZE use the stack, rather than the heap to store data.  It switches over if BITSTREAM_STACK_ALLOCATION_SIZE is exceeded
-		unsigned char stackData[BITSTREAM_STACK_ALLOCATION_SIZE];
+		/// BitStreams that use less than RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE use the stack, rather than the heap to store data.  It switches over if RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE is exceeded
+		unsigned char stackData[RAKNET_BITSTREAM_STACK_ALLOCATION_SIZE];
 	};
 
 		template <class templateType>
@@ -1088,7 +1088,7 @@ namespace RakNet
 			WriteBits( ( unsigned char* ) & inTemplateVar, sizeof( templateType ) * 8, true );
 		else
 		{
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 			if (DoEndianSwap())
 			{
 				unsigned char output[sizeof(templateType)];
@@ -1111,7 +1111,7 @@ namespace RakNet
 			WriteBits( ( unsigned char* ) inTemplateVar, sizeof( templateType ) * 8, true );
 		else
 		{
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 			if (DoEndianSwap())
 			{
 				unsigned char output[sizeof(templateType)];
@@ -1267,10 +1267,10 @@ namespace RakNet
 	}
 
 	/// \brief Write any integral type to a bitstream.  
-	/// \details Undefine __BITSTREAM_NATIVE_END if you need endian swapping.
+	/// \details Undefine RAKNET_BITSTREAM_NATIVE_END if you need endian swapping.
 	/// For floating point, this is lossy, using 2 bytes for a float and 4 for a double.  The range must be between -1 and +1.
 	/// For non-floating point, this is lossless, but only has benefit if you use less than half the bits of the type
-	/// If you are not using __BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
+	/// If you are not using RAKNET_BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
 	/// \param[in] inTemplateVar The value to write
 	template <class templateType>
 		inline void BitStream::WriteCompressed(const templateType &inTemplateVar)
@@ -1282,7 +1282,7 @@ namespace RakNet
 			WriteCompressed( ( unsigned char* ) & inTemplateVar, sizeof( templateType ) * 8, true );
 		else
 		{
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 #ifdef _MSC_VER
 #pragma warning(disable:4244)   // '=' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
 #endif
@@ -1392,7 +1392,7 @@ namespace RakNet
 	/// the current value will be written.  Otherwise, a single bit will be written
 	/// For floating point, this is lossy, using 2 bytes for a float and 4 for a double.  The range must be between -1 and +1.
 	/// For non-floating point, this is lossless, but only has benefit if you use less than half the bits of the type
-	/// If you are not using __BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
+	/// If you are not using RAKNET_BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
 	/// \param[in] currentValue The current value to write
 	/// \param[in] lastValue The last value to compare against
 	template <class templateType>
@@ -1437,7 +1437,7 @@ namespace RakNet
 		Write(currentValue);
 	}
 
-	/// \brief Read any integral type from a bitstream.  Define __BITSTREAM_NATIVE_END if you need endian swapping.
+	/// \brief Read any integral type from a bitstream.  Define RAKNET_BITSTREAM_NATIVE_END if you need endian swapping.
 	/// \param[in] outTemplateVar The value to read
 	template <class templateType>
 		inline bool BitStream::Read(templateType &outTemplateVar)
@@ -1449,7 +1449,7 @@ namespace RakNet
 			return ReadBits( ( unsigned char* ) &outTemplateVar, sizeof(templateType) * 8, true );
 		else
 		{
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 #ifdef _MSC_VER
 #pragma warning(disable:4244)   // '=' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
 #endif
@@ -1605,10 +1605,10 @@ namespace RakNet
 	}
 
 	/// \brief Read any integral type from a bitstream.  
-	/// \details Undefine __BITSTREAM_NATIVE_END if you need endian swapping.
+	/// \details Undefine RAKNET_BITSTREAM_NATIVE_END if you need endian swapping.
 	/// For floating point, this is lossy, using 2 bytes for a float and 4 for a double.  The range must be between -1 and +1.
 	/// For non-floating point, this is lossless, but only has benefit if you use less than half the bits of the type
-	/// If you are not using __BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
+	/// If you are not using RAKNET_BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
 	/// \param[in] outTemplateVar The value to read
 	template <class templateType>
 		inline bool BitStream::ReadCompressed(templateType &outTemplateVar)
@@ -1620,7 +1620,7 @@ namespace RakNet
 			return ReadCompressed( ( unsigned char* ) &outTemplateVar, sizeof(templateType) * 8, true );
 		else
 		{
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 			if (DoEndianSwap())
 			{
 				unsigned char output[sizeof(templateType)];
@@ -1720,7 +1720,7 @@ namespace RakNet
 	/// the current value will be updated.
 	/// For floating point, this is lossy, using 2 bytes for a float and 4 for a double.  The range must be between -1 and +1.
 	/// For non-floating point, this is lossless, but only has benefit if you use less than half the bits of the type
-	/// If you are not using __BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
+	/// If you are not using RAKNET_BITSTREAM_NATIVE_END the opposite is true for types larger than 1 byte
 	/// ReadCompressedDelta is only valid from a previous call to WriteDelta
 	/// \param[in] outTemplateVar The value to read
 	template <class templateType>
@@ -2043,6 +2043,6 @@ namespace RakNet
 #pragma warning( pop )
 #endif
 
-#endif
+#endif /* RAKNET_BITSTREAM_H */
 
 #endif // VC6

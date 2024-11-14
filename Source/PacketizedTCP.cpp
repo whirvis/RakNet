@@ -45,7 +45,7 @@ void PacketizedTCP::Send( const char *data, unsigned length, const SystemAddress
 {
 	PTCPHeader dataLength;
 	dataLength=length;
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 	if (RakNet::BitStream::DoEndianSwap())
 		RakNet::BitStream::ReverseBytes((unsigned char*) &length,(unsigned char*) &dataLength,sizeof(dataLength));
 #else
@@ -79,7 +79,7 @@ bool PacketizedTCP::SendList( const char **data, const unsigned int *lengths, co
 		return false;
 
 	PTCPHeader dataLength;
-#ifndef __BITSTREAM_NATIVE_END
+#ifndef RAKNET_BITSTREAM_NATIVE_END
 	if (RakNet::BitStream::DoEndianSwap())
 		RakNet::BitStream::ReverseBytes((unsigned char*) &totalLengthOfUserData,(unsigned char*) &dataLength,sizeof(dataLength));
 #else
