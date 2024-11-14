@@ -14,7 +14,7 @@
 
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_ReadyEvent==1
+#if RAKNET_SUPPORT_ReadyEvent==1
 
 #ifndef __READY_EVENT_H
 #define __READY_EVENT_H
@@ -239,4 +239,4 @@ protected:
 
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

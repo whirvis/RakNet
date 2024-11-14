@@ -10,7 +10,7 @@
 
 #include "FileList.h"
 
-#if _RAKNET_SUPPORT_FileOperations==1
+#if RAKNET_SUPPORT_FileOperations==1
 
 #include <stdio.h> // RAKNET_DEBUG_PRINTF
 #include "RakAssert.h"
@@ -815,4 +815,4 @@ bool FileList::FixEndingSlash(char *str)
 #pragma warning( pop )
 #endif
 
-#endif // _RAKNET_SUPPORT_FileOperations
+#endif // RAKNET_SUPPORT_FileOperations

@@ -13,7 +13,7 @@
 ///
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_LogCommandParser==1
+#if RAKNET_SUPPORT_LogCommandParser==1
 
 #ifndef __LOG_COMMAND_PARSER
 #define __LOG_COMMAND_PARSER
@@ -124,4 +124,4 @@ protected:
 
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

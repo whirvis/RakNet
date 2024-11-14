@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_HTTPConnection2==1 && _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_HTTPConnection2==1 && RAKNET_SUPPORT_TCPInterface==1
 
 #include "HTTPConnection2.h"
 #include "TCPInterface.h"
@@ -618,4 +618,4 @@ void HTTPConnection2::SendRequest(Request *request)
 	tcpInterface->Send(request->stringToTransmit.C_String(), (unsigned int) request->stringToTransmit.GetLength(), request->hostCompletedAddress, false);
 }
 
-#endif // #if _RAKNET_SUPPORT_HTTPConnection2==1 && _RAKNET_SUPPORT_TCPInterface==1
+#endif // #if RAKNET_SUPPORT_HTTPConnection2==1 && RAKNET_SUPPORT_TCPInterface==1

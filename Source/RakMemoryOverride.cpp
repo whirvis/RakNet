@@ -12,7 +12,7 @@
 #include "RakAssert.h"
 #include <stdlib.h>
 
-#ifdef _RAKNET_SUPPORT_DL_MALLOC
+#ifdef RAKNET_SUPPORT_DL_MALLOC
 #include "rdlmalloc.h"
 #endif
 
@@ -176,7 +176,7 @@ void RakNet::_RakFree_Ex (void *p, const char *file, unsigned int line)
 
 	free(p);
 }
-#ifdef _RAKNET_SUPPORT_DL_MALLOC
+#ifdef RAKNET_SUPPORT_DL_MALLOC
 void * RakNet::_DLMallocMMap (size_t size)
 {
 	return RAK_MMAP_DEFAULT(size);

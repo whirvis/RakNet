@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_TwoWayAuthentication==1
+#if RAKNET_SUPPORT_TwoWayAuthentication==1
 
 #include "TwoWayAuthentication.h"
 #include "Rand.h"

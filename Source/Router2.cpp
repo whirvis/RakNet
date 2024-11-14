@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_Router2==1 && _RAKNET_SUPPORT_UDPForwarder==1
+#if RAKNET_SUPPORT_Router2==1 && RAKNET_SUPPORT_UDPForwarder==1
 
 #include "Router2.h"
 #include "RakPeerInterface.h"
@@ -1365,4 +1365,4 @@ Router2DebugInterface *Router2::GetDebugInterface(void) const
 	return debugInterface;
 }
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

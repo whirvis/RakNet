@@ -10,7 +10,7 @@
 
 #include "UDPForwarder.h"
 
-#if _RAKNET_SUPPORT_UDPForwarder==1
+#if RAKNET_SUPPORT_UDPForwarder==1
 
 #include "GetTime.h"
 #include "MTUSize.h"
@@ -639,4 +639,4 @@ RAK_THREAD_DECLARATION(UpdateUDPForwarderGlobal)
 
 } // namespace RakNet
 
-#endif // #if _RAKNET_SUPPORT_FileOperations==1
+#endif // #if RAKNET_SUPPORT_FileOperations==1

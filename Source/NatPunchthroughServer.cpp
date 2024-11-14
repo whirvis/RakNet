@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_NatPunchthroughServer==1
+#if RAKNET_SUPPORT_NatPunchthroughServer==1
 
 #include "NatPunchthroughServer.h"
 #include "SocketLayer.h"
@@ -26,7 +26,7 @@ void NatPunchthroughServerDebugInterface_Printf::OnServerMessage(const char *msg
 {
 	printf("%s\n", msg);
 }
-#if _RAKNET_SUPPORT_PacketLogger==1
+#if RAKNET_SUPPORT_PacketLogger==1
 void NatPunchthroughServerDebugInterface_PacketLogger::OnServerMessage(const char *msg)
 {
 	if (pl)
@@ -621,4 +621,4 @@ void NatPunchthroughServer::StartPunchthroughForUser(User *user)
 	}
 }
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

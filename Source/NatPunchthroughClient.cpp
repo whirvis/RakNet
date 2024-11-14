@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_NatPunchthroughClient==1
+#if RAKNET_SUPPORT_NatPunchthroughClient==1
 
 #include "NatPunchthroughClient.h"
 #include "BitStream.h"
@@ -25,7 +25,7 @@ void NatPunchthroughDebugInterface_Printf::OnClientMessage(const char *msg)
 {
 	printf("%s\n", msg);
 }
-#if _RAKNET_SUPPORT_PacketLogger==1
+#if RAKNET_SUPPORT_PacketLogger==1
 void NatPunchthroughDebugInterface_PacketLogger::OnClientMessage(const char *msg)
 {
 	if (pl)
@@ -1212,5 +1212,5 @@ void NatPunchthroughClient::UpdateGroupPunchOnNatResult(SystemAddress facilitato
 }
 */
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*
 

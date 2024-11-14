@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_LogCommandParser==1
+#if RAKNET_SUPPORT_LogCommandParser==1
 
 #include "LogCommandParser.h"
 #include "TransportInterface.h"
@@ -286,4 +286,4 @@ void LogCommandParser::OnTransportChange(TransportInterface *transport)
 #pragma warning( pop )
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

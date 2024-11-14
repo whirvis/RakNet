@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_ConnectionGraph2==1
+#if RAKNET_SUPPORT_ConnectionGraph2==1
 
 #include "ConnectionGraph2.h"
 #include "RakPeerInterface.h"
@@ -306,4 +306,4 @@ PluginReceiveResult ConnectionGraph2::OnReceive(Packet *packet)
 	return RR_CONTINUE_PROCESSING;
 }
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

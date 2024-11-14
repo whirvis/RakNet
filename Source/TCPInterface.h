@@ -14,7 +14,7 @@
 
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_TCPInterface==1
 
 #ifndef __SIMPLE_TCP_SERVER
 #define __SIMPLE_TCP_SERVER
@@ -259,5 +259,5 @@ struct RemoteClient
 
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*
 

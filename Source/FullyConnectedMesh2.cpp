@@ -13,7 +13,7 @@
 
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_FullyConnectedMesh2==1
+#if RAKNET_SUPPORT_FullyConnectedMesh2==1
 
 #include "FullyConnectedMesh2.h"
 #include "RakPeerInterface.h"
@@ -1420,4 +1420,4 @@ void FullyConnectedMesh2::CategorizeVJIP(VerifiedJoinInProgress *vjip,
 	}
 }
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_TelnetTransport==1
+#if RAKNET_SUPPORT_TelnetTransport==1
 
 #include "RakNetTransport2.h"
 
@@ -135,4 +135,4 @@ void RakNetTransport2::OnNewConnection(const SystemAddress &systemAddress, RakNe
 #pragma warning( pop )
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

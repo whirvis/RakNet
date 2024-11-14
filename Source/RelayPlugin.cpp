@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_RelayPlugin==1
+#if RAKNET_SUPPORT_RelayPlugin==1
 
 #include "RelayPlugin.h"
 #include "MessageIdentifiers.h"
@@ -429,4 +429,4 @@ void RelayPlugin::OnLeaveGroupRequestFromClient(Packet *packet)
 	if (strAndGuidSender)
 		LeaveGroup(strAndGuidSender);
 }
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

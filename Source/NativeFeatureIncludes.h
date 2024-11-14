@@ -19,145 +19,145 @@
 #define LIBCAT_SECURITY 0
 #endif
 
-#ifndef _RAKNET_SUPPORT_ConnectionGraph2
-#define _RAKNET_SUPPORT_ConnectionGraph2       1
+#ifndef RAKNET_SUPPORT_ConnectionGraph2
+#define RAKNET_SUPPORT_ConnectionGraph2       1
 #endif
-#ifndef _RAKNET_SUPPORT_DirectoryDeltaTransfer
-#define _RAKNET_SUPPORT_DirectoryDeltaTransfer 1
+#ifndef RAKNET_SUPPORT_DirectoryDeltaTransfer
+#define RAKNET_SUPPORT_DirectoryDeltaTransfer 1
 #endif
-#ifndef _RAKNET_SUPPORT_FileListTransfer
-#define _RAKNET_SUPPORT_FileListTransfer       1
+#ifndef RAKNET_SUPPORT_FileListTransfer
+#define RAKNET_SUPPORT_FileListTransfer       1
 #endif
-#ifndef _RAKNET_SUPPORT_FullyConnectedMesh
-#define _RAKNET_SUPPORT_FullyConnectedMesh     1
+#ifndef RAKNET_SUPPORT_FullyConnectedMesh
+#define RAKNET_SUPPORT_FullyConnectedMesh     1
 #endif
-#ifndef _RAKNET_SUPPORT_FullyConnectedMesh2
-#define _RAKNET_SUPPORT_FullyConnectedMesh2    1
+#ifndef RAKNET_SUPPORT_FullyConnectedMesh2
+#define RAKNET_SUPPORT_FullyConnectedMesh2    1
 #endif
-#ifndef _RAKNET_SUPPORT_MessageFilter
-#define _RAKNET_SUPPORT_MessageFilter          1
+#ifndef RAKNET_SUPPORT_MessageFilter
+#define RAKNET_SUPPORT_MessageFilter          1
 #endif
-#ifndef _RAKNET_SUPPORT_NatPunchthroughClient
-#define _RAKNET_SUPPORT_NatPunchthroughClient  1
+#ifndef RAKNET_SUPPORT_NatPunchthroughClient
+#define RAKNET_SUPPORT_NatPunchthroughClient  1
 #endif
-#ifndef _RAKNET_SUPPORT_NatPunchthroughServer
-#define _RAKNET_SUPPORT_NatPunchthroughServer  1
+#ifndef RAKNET_SUPPORT_NatPunchthroughServer
+#define RAKNET_SUPPORT_NatPunchthroughServer  1
 #endif
-#ifndef _RAKNET_SUPPORT_NatTypeDetectionClient
-#define _RAKNET_SUPPORT_NatTypeDetectionClient 1
+#ifndef RAKNET_SUPPORT_NatTypeDetectionClient
+#define RAKNET_SUPPORT_NatTypeDetectionClient 1
 #endif
-#ifndef _RAKNET_SUPPORT_NatTypeDetectionServer
-#define _RAKNET_SUPPORT_NatTypeDetectionServer 1
+#ifndef RAKNET_SUPPORT_NatTypeDetectionServer
+#define RAKNET_SUPPORT_NatTypeDetectionServer 1
 #endif
-#ifndef _RAKNET_SUPPORT_PacketLogger
-#define _RAKNET_SUPPORT_PacketLogger           1
+#ifndef RAKNET_SUPPORT_PacketLogger
+#define RAKNET_SUPPORT_PacketLogger           1
 #endif
-#ifndef _RAKNET_SUPPORT_ReadyEvent
-#define _RAKNET_SUPPORT_ReadyEvent             1
+#ifndef RAKNET_SUPPORT_ReadyEvent
+#define RAKNET_SUPPORT_ReadyEvent             1
 #endif
-#ifndef _RAKNET_SUPPORT_ReplicaManager3
-#define _RAKNET_SUPPORT_ReplicaManager3        1
+#ifndef RAKNET_SUPPORT_ReplicaManager3
+#define RAKNET_SUPPORT_ReplicaManager3        1
 #endif
-#ifndef _RAKNET_SUPPORT_Router2
-#define _RAKNET_SUPPORT_Router2                1
+#ifndef RAKNET_SUPPORT_Router2
+#define RAKNET_SUPPORT_Router2                1
 #endif
-#ifndef _RAKNET_SUPPORT_RPC4Plugin
-#define _RAKNET_SUPPORT_RPC4Plugin             1
+#ifndef RAKNET_SUPPORT_RPC4Plugin
+#define RAKNET_SUPPORT_RPC4Plugin             1
 #endif
-#ifndef _RAKNET_SUPPORT_TeamBalancer
-#define _RAKNET_SUPPORT_TeamBalancer           1
+#ifndef RAKNET_SUPPORT_TeamBalancer
+#define RAKNET_SUPPORT_TeamBalancer           1
 #endif
-#ifndef _RAKNET_SUPPORT_TeamManager
-#define _RAKNET_SUPPORT_TeamManager            1
+#ifndef RAKNET_SUPPORT_TeamManager
+#define RAKNET_SUPPORT_TeamManager            1
 #endif
-#ifndef _RAKNET_SUPPORT_UDPProxyClient
-#define _RAKNET_SUPPORT_UDPProxyClient         1
+#ifndef RAKNET_SUPPORT_UDPProxyClient
+#define RAKNET_SUPPORT_UDPProxyClient         1
 #endif
-#ifndef _RAKNET_SUPPORT_UDPProxyCoordinator
-#define _RAKNET_SUPPORT_UDPProxyCoordinator    1
+#ifndef RAKNET_SUPPORT_UDPProxyCoordinator
+#define RAKNET_SUPPORT_UDPProxyCoordinator    1
 #endif
-#ifndef _RAKNET_SUPPORT_UDPProxyServer
-#define _RAKNET_SUPPORT_UDPProxyServer         1
+#ifndef RAKNET_SUPPORT_UDPProxyServer
+#define RAKNET_SUPPORT_UDPProxyServer         1
 #endif
-#ifndef _RAKNET_SUPPORT_ConsoleServer
-#define _RAKNET_SUPPORT_ConsoleServer          1
+#ifndef RAKNET_SUPPORT_ConsoleServer
+#define RAKNET_SUPPORT_ConsoleServer          1
 #endif
-#ifndef _RAKNET_SUPPORT_RakNetTransport
-#define _RAKNET_SUPPORT_RakNetTransport        1
+#ifndef RAKNET_SUPPORT_RakNetTransport
+#define RAKNET_SUPPORT_RakNetTransport        1
 #endif
-#ifndef _RAKNET_SUPPORT_TelnetTransport
-#define _RAKNET_SUPPORT_TelnetTransport        1
+#ifndef RAKNET_SUPPORT_TelnetTransport
+#define RAKNET_SUPPORT_TelnetTransport        1
 #endif
-#ifndef _RAKNET_SUPPORT_TCPInterface
-#define _RAKNET_SUPPORT_TCPInterface           1
+#ifndef RAKNET_SUPPORT_TCPInterface
+#define RAKNET_SUPPORT_TCPInterface           1
 #endif
-#ifndef _RAKNET_SUPPORT_LogCommandParser
-#define _RAKNET_SUPPORT_LogCommandParser       1
+#ifndef RAKNET_SUPPORT_LogCommandParser
+#define RAKNET_SUPPORT_LogCommandParser       1
 #endif
-#ifndef _RAKNET_SUPPORT_RakNetCommandParser
-#define _RAKNET_SUPPORT_RakNetCommandParser    1
+#ifndef RAKNET_SUPPORT_RakNetCommandParser
+#define RAKNET_SUPPORT_RakNetCommandParser    1
 #endif
-#ifndef _RAKNET_SUPPORT_EmailSender
-#define _RAKNET_SUPPORT_EmailSender            1
+#ifndef RAKNET_SUPPORT_EmailSender
+#define RAKNET_SUPPORT_EmailSender            1
 #endif
-#ifndef _RAKNET_SUPPORT_HTTPConnection
-#define _RAKNET_SUPPORT_HTTPConnection         1
+#ifndef RAKNET_SUPPORT_HTTPConnection
+#define RAKNET_SUPPORT_HTTPConnection         1
 #endif
-#ifndef _RAKNET_SUPPORT_HTTPConnection2
-#define _RAKNET_SUPPORT_HTTPConnection2        1
+#ifndef RAKNET_SUPPORT_HTTPConnection2
+#define RAKNET_SUPPORT_HTTPConnection2        1
 #endif
-#ifndef _RAKNET_SUPPORT_PacketizedTCP
-#define _RAKNET_SUPPORT_PacketizedTCP          1
+#ifndef RAKNET_SUPPORT_PacketizedTCP
+#define RAKNET_SUPPORT_PacketizedTCP          1
 #endif
-#ifndef _RAKNET_SUPPORT_TwoWayAuthentication
-#define _RAKNET_SUPPORT_TwoWayAuthentication   1
+#ifndef RAKNET_SUPPORT_TwoWayAuthentication
+#define RAKNET_SUPPORT_TwoWayAuthentication   1
 #endif
-#ifndef _RAKNET_SUPPORT_CloudClient
-#define _RAKNET_SUPPORT_CloudClient            1
+#ifndef RAKNET_SUPPORT_CloudClient
+#define RAKNET_SUPPORT_CloudClient            1
 #endif
-#ifndef _RAKNET_SUPPORT_CloudServer
-#define _RAKNET_SUPPORT_CloudServer            1
+#ifndef RAKNET_SUPPORT_CloudServer
+#define RAKNET_SUPPORT_CloudServer            1
 #endif
-#ifndef _RAKNET_SUPPORT_DynDNS
-#define _RAKNET_SUPPORT_DynDNS                 1
+#ifndef RAKNET_SUPPORT_DynDNS
+#define RAKNET_SUPPORT_DynDNS                 1
 #endif
-#ifndef _RAKNET_SUPPORT_Rackspace
-#define _RAKNET_SUPPORT_Rackspace              1
+#ifndef RAKNET_SUPPORT_Rackspace
+#define RAKNET_SUPPORT_Rackspace              1
 #endif
-#ifndef _RAKNET_SUPPORT_FileOperations
-#define _RAKNET_SUPPORT_FileOperations         1
+#ifndef RAKNET_SUPPORT_FileOperations
+#define RAKNET_SUPPORT_FileOperations         1
 #endif
-#ifndef _RAKNET_SUPPORT_UDPForwarder
-#define _RAKNET_SUPPORT_UDPForwarder           1
+#ifndef RAKNET_SUPPORT_UDPForwarder
+#define RAKNET_SUPPORT_UDPForwarder           1
 #endif
-#ifndef _RAKNET_SUPPORT_StatisticsHistory
-#define _RAKNET_SUPPORT_StatisticsHistory      1
+#ifndef RAKNET_SUPPORT_StatisticsHistory
+#define RAKNET_SUPPORT_StatisticsHistory      1
 #endif
-#ifndef _RAKNET_SUPPORT_LibVoice
-#define _RAKNET_SUPPORT_LibVoice               0
+#ifndef RAKNET_SUPPORT_LibVoice
+#define RAKNET_SUPPORT_LibVoice               0
 #endif
-#ifndef _RAKNET_SUPPORT_RelayPlugin
-#define _RAKNET_SUPPORT_RelayPlugin            1
+#ifndef RAKNET_SUPPORT_RelayPlugin
+#define RAKNET_SUPPORT_RelayPlugin            1
 #endif
 
 /* ensure required dependencies are enabled */
-#if     _RAKNET_SUPPORT_DirectoryDeltaTransfer == 1
-#undef  _RAKNET_SUPPORT_FileListTransfer
-#define _RAKNET_SUPPORT_FileListTransfer 1
+#if     RAKNET_SUPPORT_DirectoryDeltaTransfer == 1
+#undef  RAKNET_SUPPORT_FileListTransfer
+#define RAKNET_SUPPORT_FileListTransfer 1
 #endif
-#if     _RAKNET_SUPPORT_FullyConnectedMesh2    == 1
-#undef  _RAKNET_SUPPORT_ConnectionGraph2
-#define _RAKNET_SUPPORT_ConnectionGraph2 1
+#if     RAKNET_SUPPORT_FullyConnectedMesh2    == 1
+#undef  RAKNET_SUPPORT_ConnectionGraph2
+#define RAKNET_SUPPORT_ConnectionGraph2 1
 #endif
-#if     _RAKNET_SUPPORT_TelnetTransport        == 1
-#undef  _RAKNET_SUPPORT_PacketizedTCP
-#define _RAKNET_SUPPORT_PacketizedTCP    1
+#if     RAKNET_SUPPORT_TelnetTransport        == 1
+#undef  RAKNET_SUPPORT_PacketizedTCP
+#define RAKNET_SUPPORT_PacketizedTCP    1
 #endif
-#if     _RAKNET_SUPPORT_PacketizedTCP          == 1 || \
-        _RAKNET_SUPPORT_EmailSender            == 1 || \
-        _RAKNET_SUPPORT_HTTPConnection         == 1
-#undef  _RAKNET_SUPPORT_TCPInterface
-#define _RAKNET_SUPPORT_TCPInterface     1
+#if     RAKNET_SUPPORT_PacketizedTCP          == 1 || \
+        RAKNET_SUPPORT_EmailSender            == 1 || \
+        RAKNET_SUPPORT_HTTPConnection         == 1
+#undef  RAKNET_SUPPORT_TCPInterface
+#define RAKNET_SUPPORT_TCPInterface     1
 #endif
 
 #endif /* RAKNET_NATIVE_FEATURE_INCLDUES_H */

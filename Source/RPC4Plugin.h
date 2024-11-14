@@ -14,7 +14,7 @@
 
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_RPC4Plugin==1
+#if RAKNET_SUPPORT_RPC4Plugin==1
 
 #ifndef __RPC_4_PLUGIN_H
 #define __RPC_4_PLUGIN_H
@@ -241,4 +241,4 @@ class NetworkIDManager;
 #pragma warning( pop )
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

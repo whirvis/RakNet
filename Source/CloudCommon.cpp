@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_CloudClient==1 || _RAKNET_SUPPORT_CloudServer==1
+#if RAKNET_SUPPORT_CloudClient==1 || RAKNET_SUPPORT_CloudServer==1
 
 #include "CloudCommon.h"
 #include "BitStream.h"
@@ -166,4 +166,4 @@ void CloudQueryResult::Serialize(bool writeToBitstream, BitStream *bitStream, Cl
 	SerializeCloudQueryRows(writeToBitstream, numRows, bitStream, allocator);
 }
 
-#endif // #if _RAKNET_SUPPORT_CloudMemoryClient==1 || _RAKNET_SUPPORT_CloudMemoryServer==1
+#endif // #if RAKNET_SUPPORT_CloudMemoryClient==1 || RAKNET_SUPPORT_CloudMemoryServer==1

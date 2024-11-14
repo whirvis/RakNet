@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_PacketLogger==1
+#if RAKNET_SUPPORT_PacketLogger==1
 
 #if defined(UNICODE)
 #include "RakWString.h"
@@ -49,4 +49,4 @@ void PacketOutputWindowLogger::WriteLog(const char *str)
 #endif
 }
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

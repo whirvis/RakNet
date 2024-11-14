@@ -514,7 +514,7 @@ StartupResult RakPeer::Startup( unsigned int maxConnections, SocketDescriptor *s
 			#if RAKNET_SUPPORT_IPV6==0
 				socketDescriptors[i].socketFamily!=AF_INET ||
 			#endif
-				br==BR_REQUIRES_RAKNET_SUPPORT_IPV6_DEFINE)
+				br==BR_REQUIRESRAKNET_SUPPORT_IPV6_DEFINE)
 			{
 				RakNetSocket2Allocator::DeallocRNS2(r2);
 				DerefAllSockets();

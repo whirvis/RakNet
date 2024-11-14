@@ -343,7 +343,7 @@ RNS2BindResult RNS2_Berkley::BindSharedIPV4And6( RNS2_BerkleyBindParameters *bin
 	return BR_FAILED_TO_BIND_SOCKET;
 
 #else
-return BR_REQUIRES_RAKNET_SUPPORT_IPV6_DEFINE;
+return BR_REQUIRESRAKNET_SUPPORT_IPV6_DEFINE;
 #endif
 }
 

@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_CloudClient==1
+#if RAKNET_SUPPORT_CloudClient==1
 
 #include "CloudClient.h"
 #include "GetTime.h"

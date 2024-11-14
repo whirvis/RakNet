@@ -14,7 +14,7 @@
 
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_PacketLogger==1
+#if RAKNET_SUPPORT_PacketLogger==1
 
 #ifndef __PACKET_FILE_LOGGER_H_
 #define __PACKET_FILE_LOGGER_H_
@@ -42,4 +42,4 @@ protected:
 
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

@@ -13,7 +13,7 @@
 ///
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_NatPunchthroughClient==1
+#if RAKNET_SUPPORT_NatPunchthroughClient==1
 
 #ifndef __NAT_PUNCHTHROUGH_CLIENT_H
 #define __NAT_PUNCHTHROUGH_CLIENT_H
@@ -40,7 +40,7 @@ namespace RakNet
 /// Forward declarations
 class RakPeerInterface;
 struct Packet;
-#if _RAKNET_SUPPORT_PacketLogger==1
+#if RAKNET_SUPPORT_PacketLogger==1
 class PacketLogger;
 #endif
 
@@ -111,7 +111,7 @@ struct RAK_DLL_EXPORT NatPunchthroughDebugInterface_Printf : public NatPunchthro
 	virtual void OnClientMessage(const char *msg);
 };
 
-#if _RAKNET_SUPPORT_PacketLogger==1
+#if RAKNET_SUPPORT_PacketLogger==1
 /// \ingroup NAT_PUNCHTHROUGH_GROUP
 struct RAK_DLL_EXPORT NatPunchthroughDebugInterface_PacketLogger : public NatPunchthroughDebugInterface
 {
@@ -303,4 +303,4 @@ protected:
 
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

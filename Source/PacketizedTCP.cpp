@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_PacketizedTCP==1 && RAKNET_SUPPORT_TCPInterface==1
 
 #include "PacketizedTCP.h"
 #include "NativeTypes.h"
@@ -353,4 +353,4 @@ SystemAddress PacketizedTCP::HasLostConnection(void)
 	return UNASSIGNED_SYSTEM_ADDRESS;
 }
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

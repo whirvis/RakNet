@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_RakNetCommandParser==1
+#if RAKNET_SUPPORT_RakNetCommandParser==1
 
 #include "RakNetCommandParser.h"
 #include "TransportInterface.h"
@@ -309,4 +309,4 @@ void RakNetCommandParser::SendHelp(TransportInterface *transport, const SystemAd
 #pragma warning( pop )
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

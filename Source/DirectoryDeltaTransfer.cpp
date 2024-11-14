@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_DirectoryDeltaTransfer==1 && _RAKNET_SUPPORT_FileOperations==1
+#if RAKNET_SUPPORT_DirectoryDeltaTransfer==1 && RAKNET_SUPPORT_FileOperations==1
 
 #include "DirectoryDeltaTransfer.h"
 #include "FileList.h"
@@ -249,4 +249,4 @@ void DirectoryDeltaTransfer::SetDownloadRequestIncrementalReadInterface(Incremen
 #pragma warning( pop )
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

@@ -15,7 +15,7 @@
 
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_UDPForwarder==1
+#if RAKNET_SUPPORT_UDPForwarder==1
 
 #ifndef __UDP_FORWARDER_H
 #define __UDP_FORWARDER_H
@@ -156,4 +156,4 @@ protected:
 
 #endif
 
-#endif // #if _RAKNET_SUPPORT_UDPForwarder==1
+#endif // #if RAKNET_SUPPORT_UDPForwarder==1

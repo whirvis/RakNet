@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_ReplicaManager3==1
+#if RAKNET_SUPPORT_ReplicaManager3==1
 
 #include "ReplicaManager3.h"
 #include "GetTime.h"
@@ -2590,4 +2590,4 @@ RM3ActionOnPopConnection Replica3::QueryActionOnPopConnection_PeerToPeer(RakNet:
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

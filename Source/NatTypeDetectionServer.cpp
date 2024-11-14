@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_NatTypeDetectionServer==1
+#if RAKNET_SUPPORT_NatTypeDetectionServer==1
 
 #include "NatTypeDetectionServer.h"
 #include "SocketLayer.h"
@@ -435,4 +435,4 @@ void NatTypeDetectionServer::OnRNS2Recv(RNS2RecvStruct *recvStruct)
 	bufferedPacketsMutex.Unlock();
 }
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

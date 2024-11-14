@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_EmailSender==1 && _RAKNET_SUPPORT_TCPInterface==1 && _RAKNET_SUPPORT_FileOperations==1
+#if RAKNET_SUPPORT_EmailSender==1 && RAKNET_SUPPORT_TCPInterface==1 && RAKNET_SUPPORT_FileOperations==1
 
 // Useful sites
 // http://www.faqs.org\rfcs\rfc2821.html
@@ -374,4 +374,4 @@ const char *EmailSender::GetResponse(TCPInterface *tcpInterface, const SystemAdd
 }
 
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

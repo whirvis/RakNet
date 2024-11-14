@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_NatTypeDetectionClient==1
+#if RAKNET_SUPPORT_NatTypeDetectionClient==1
 
 #include "NatTypeDetectionClient.h"
 #include "RakNetSmartPtr.h"
@@ -241,4 +241,4 @@ void NatTypeDetectionClient::OnRNS2Recv(RNS2RecvStruct *recvStruct)
 	bufferedPacketsMutex.Unlock();
 }
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

@@ -13,7 +13,7 @@
 
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_FileOperations==1
+#if RAKNET_SUPPORT_FileOperations==1
 
 #ifndef __FILE_OPERATIONS_H
 #define __FILE_OPERATIONS_H
@@ -29,4 +29,4 @@ unsigned int RAK_DLL_EXPORT GetFileLength(const char *path);
 
 #endif
 
-#endif // _RAKNET_SUPPORT_FileOperations
+#endif // RAKNET_SUPPORT_FileOperations

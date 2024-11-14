@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_PacketLogger==1
+#if RAKNET_SUPPORT_PacketLogger==1
 #include "PacketFileLogger.h"
 #include "GetTime.h"
 
@@ -52,4 +52,4 @@ void PacketFileLogger::WriteLog(const char *str)
 	}
 }
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

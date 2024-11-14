@@ -19,7 +19,7 @@ using namespace RakNet;
 PluginInterface2::PluginInterface2()
 {
 	rakPeerInterface=0;
-#if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_PacketizedTCP==1 && RAKNET_SUPPORT_TCPInterface==1
 	tcpInterface=0;
 #endif
 }
@@ -34,7 +34,7 @@ void PluginInterface2::SendUnified( const RakNet::BitStream * bitStream, PacketP
 		rakPeerInterface->Send(bitStream,priority,reliability,orderingChannel,systemIdentifier,broadcast);
 		return;
 	}
-#if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_PacketizedTCP==1 && RAKNET_SUPPORT_TCPInterface==1
 	else if (tcpInterface)
 	{
 		tcpInterface->Send((const char*) bitStream->GetData(), bitStream->GetNumberOfBytesUsed(), systemIdentifier.systemAddress, broadcast);
@@ -68,7 +68,7 @@ void PluginInterface2::SendUnified( const char * data, const int length, PacketP
 		rakPeerInterface->Send(data, length, priority,reliability,orderingChannel,systemIdentifier,broadcast);
 		return;
 	}
-#if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_PacketizedTCP==1 && RAKNET_SUPPORT_TCPInterface==1
 	else if (tcpInterface)
 	{
 		tcpInterface->Send(data, length, systemIdentifier.systemAddress, broadcast);
@@ -101,7 +101,7 @@ Packet *PluginInterface2::AllocatePacketUnified(unsigned dataSize)
 	{
 		return rakPeerInterface->AllocatePacket(dataSize);
 	}
-#if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_PacketizedTCP==1 && RAKNET_SUPPORT_TCPInterface==1
 	else if (tcpInterface)
 	{
 		return tcpInterface->AllocatePacket(dataSize);
@@ -124,7 +124,7 @@ void PluginInterface2::PushBackPacketUnified(Packet *packet, bool pushAtHead)
 		rakPeerInterface->PushBackPacket(packet,pushAtHead);
 		return;
 	}
-#if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_PacketizedTCP==1 && RAKNET_SUPPORT_TCPInterface==1
 	else if (tcpInterface)
 	{
 		tcpInterface->PushBackPacket(packet,pushAtHead);
@@ -142,7 +142,7 @@ void PluginInterface2::DeallocPacketUnified(Packet *packet)
 		rakPeerInterface->DeallocatePacket(packet);
 		return;
 	}
-#if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_PacketizedTCP==1 && RAKNET_SUPPORT_TCPInterface==1
 	else if (tcpInterface)
 	{
 		tcpInterface->DeallocatePacket(packet);
@@ -159,7 +159,7 @@ bool PluginInterface2::SendListUnified( const char **data, const int *lengths, c
 	{
 		return rakPeerInterface->SendList(data,lengths,numParameters,priority,reliability,orderingChannel,systemIdentifier,broadcast)!=0;
 	}
-#if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_PacketizedTCP==1 && RAKNET_SUPPORT_TCPInterface==1
 	else if (tcpInterface)
 	{
 		return tcpInterface->SendList(data,(const unsigned int *) lengths,numParameters,systemIdentifier.systemAddress,broadcast );
@@ -207,7 +207,7 @@ void PluginInterface2::SetRakPeerInterface( RakPeerInterface *ptr )
 {
 	rakPeerInterface=ptr;
 }
-#if _RAKNET_SUPPORT_TCPInterface==1
+#if RAKNET_SUPPORT_TCPInterface==1
 void PluginInterface2::SetTCPInterface( TCPInterface *ptr )
 {
 	tcpInterface=ptr;

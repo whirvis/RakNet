@@ -16,7 +16,7 @@
 
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_TeamBalancer==1
+#if RAKNET_SUPPORT_TeamBalancer==1
 
 #ifndef __TEAM_BALANCER_H
 #define __TEAM_BALANCER_H
@@ -203,4 +203,4 @@ protected:
 
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_ReadyEvent==1
+#if RAKNET_SUPPORT_ReadyEvent==1
 
 #include "ReadyEvent.h"
 #include "RakPeerInterface.h"
@@ -569,4 +569,4 @@ void ReadyEvent::PushCompletionPacket(unsigned eventId)
 #pragma warning( pop )
 #endif
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

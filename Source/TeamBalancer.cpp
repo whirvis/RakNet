@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_TeamBalancer==1
+#if RAKNET_SUPPORT_TeamBalancer==1
 
 #include "TeamBalancer.h"
 #include "BitStream.h"
@@ -882,4 +882,4 @@ bool TeamBalancer::TeamsWouldBeEvenOnSwitch(TeamId t1, TeamId t2)
 		TeamWouldBeUnderpopulatedOnLeave(t2, teamMembers.Size()-1)==false;
 }
 
-#endif // _RAKNET_SUPPORT_*
+#endif // RAKNET_SUPPORT_*

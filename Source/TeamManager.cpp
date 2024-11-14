@@ -9,7 +9,7 @@
  */
 
 #include "NativeFeatureIncludes.h"
-#if _RAKNET_SUPPORT_TeamManager==1
+#if RAKNET_SUPPORT_TeamManager==1
 
 #include "TeamManager.h"
 #include "BitStream.h"
@@ -2849,5 +2849,5 @@ void TeamManager::OnSetBalanceTeamsInitial(Packet *packet, TM_World *world)
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#endif // _RAKNET_SUPPORT_TeamManager==1
+#endif // RAKNET_SUPPORT_TeamManager==1
 
