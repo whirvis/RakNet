@@ -8,16 +8,6 @@
  */
 #include "CheckSum.h"
 
-inline
-CheckSum::CheckSum() {
-    this->Clear();
-}
-
-inline unsigned int
-CheckSum::Get() {
-    return this->sum;
-}
-
 void
 CheckSum::Add(unsigned int value) {
     union {
@@ -56,12 +46,4 @@ CheckSum::Add (unsigned char *b, unsigned int length) {
     for (unsigned int i = 0; i < length; i++) {
         this->Add(b[i]);
     }
-}
-
-inline void
-CheckSum::Clear() {
-   this->r = 55665;
-   this->c1 = 52845;
-   this->c2 = 22719;
-   this->sum = 0;
 }

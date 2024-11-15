@@ -42,4 +42,22 @@ public:
 
 };
 
+inline
+CheckSum::CheckSum() {
+    this->Clear();
+}
+
+inline unsigned int
+CheckSum::Get() {
+    return this->sum;
+}
+
+inline void
+CheckSum::Clear() {
+   this->r = 55665;
+   this->c1 = 52845;
+   this->c2 = 22719;
+   this->sum = 0;
+}
+
 #endif /* RAKNET_CHECKSUM_H */
