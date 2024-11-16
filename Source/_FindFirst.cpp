@@ -1,152 +1,141 @@
-/**
-* Original file by the_viking, fixed by R√¥mulo Fernandes, fixed by Emmanuel Nars
-* Should emulate windows finddata structure
-*/
-#if (defined(__GNUC__)  || defined(__GCCXML__)) && !defined(_WIN32)
+/*
+ * Copyright (c) 2014, Oculus VR, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
 #include "_FindFirst.h"
-#include "DS_List.h"
 
+/*
+ * Original code written by "the_viking", with fixes by Rômulo Fernandes.
+ * This should emulate the finddata structure found in the Win32 API.
+ */
+
+#if !defined(__WIN32) && (defined(__GNUC__) || defined(__GCCXML__))
+
+#include <dirent.h>
+#include <fnmatch.h>
 #include <sys/stat.h>
 
-#include <fnmatch.h>
-
-
-static DataStructures::List< _findinfo_t* > fileInfo;
-	
-#include "RakMemoryOverride.h"
+#include "DS_List.h"
 #include "RakAssert.h"
+#include "RakMemoryOverride.h"
+#include "RakString.h"
 
-/**
-* _findfirst - equivalent
-*/
-long _findfirst(const char *name, _finddata_t *f)
-{
-	RakNet::RakString nameCopy = name;
-        RakNet::RakString filter;
+static DataStructures::List<_findinfo_t *> fileInfo;
 
-        // This is linux only, so don't bother with '\'
-	const char* lastSep = strrchr(name,'/');
-	if(!lastSep)
-	{
-            // filter pattern only is given, search current directory.
-            filter = nameCopy;
-            nameCopy = ".";
-	} else
-	{
-            // strip filter pattern from directory name, leave
-            // trailing '/' intact.
-            filter = lastSep+1;
-            unsigned sepIndex = lastSep - name;
-            nameCopy.Erase(sepIndex+1, nameCopy.GetLength() - sepIndex-1);
-	}
+long
+_findfirst(const char *name, _finddata_t *f) {
+    RakNet::RakString rakName = name;
+    RakNet::RakString rakFilter;
 
-	DIR* dir = opendir(nameCopy);
-        
-	if(!dir) return -1;
+    /*
+     * This is Linux only, so don't bother with backslashes.
+     *
+     * If a "/" character is found, a filter pattern only was given
+     * and the current directory should be searched. If not, strip
+     * the filter pattern from the directory name while leaving the
+     * trailing "/" intact.
+     */
+    const char *lastSep = strrchr(name, '/');
+    if(!lastSep) {
+        rakFilter = rakName;
+        rakName = ".";
+    } else {
+        rakFilter = lastSep + 1;
+        unsigned sepIndex = lastSep - name;
+        rakName.Erase(sepIndex + 1, rakName.GetLength() - sepIndex - 1);
+    }
 
-	_findinfo_t* fi = RakNet::OP_NEW<_findinfo_t>( _FILE_AND_LINE_ );
-	fi->filter    = filter;
-	fi->dirName   = nameCopy;  // we need to remember this for stat()
-	fi->openedDir = dir;
-	fileInfo.Insert(fi, _FILE_AND_LINE_);
+    DIR *dir = opendir(rakName);
+    if(!dir) {
+        return -1;
+    }
 
-        long ret = fileInfo.Size()-1;
+    _findinfo_t* fi = RakNet::OP_NEW<_findinfo_t>(_FILE_AND_LINE_);
+    fi->filter    = rakFilter;
+    fi->dirName   = rakName; /* this is needed for stat() later */
+    fi->openedDir = dir;
+    fileInfo.Insert(fi, _FILE_AND_LINE_);
 
-        // Retrieve the first file. We cannot rely on the first item
-        // being '.'
-        if (_findnext(ret, f) == -1) return -1;
-        else return ret;
+    /*
+     * Retrieve the first file.
+     * We cannot rely on the first item being "."
+     */
+    long ret = fileInfo.Size() - 1;
+    if (_findnext(ret, f) == -1) {
+        return -1;
+    }
+
+    return ret;
 }
 
+int
+_findnext(long h, _finddata_t *f) {
+    RakAssert(h >= 0 && h < (long) fileInfo.Size());
+    if (h < 0 || h >= (long) fileInfo.Size()) {
+        return -1;
+    }
 
+    /*
+     * TODO: Not a fan of this while(true) here, maybe it could be
+     *  replaced with a proper condition rather than relying purely
+     *  on a return or break statement?
+     */
+    _findinfo_t* fi = fileInfo[h];
+    while(true) {
+        dirent *entry = readdir(fi->openedDir);
+        if(!entry) {
+            return -1;
+        }
 
+        /* only report stuff matching our filter */
+        if (fnmatch(fi->filter, entry->d_name, FNM_PATHNAME) != 0) {
+            continue;
+        }
 
+        /*
+         * To reliably determine the entry's type, we must use stat().
+         * We cannot rely on entry->d_type, as it may be unavailable!
+         */
+        struct stat filestat;
+        RakNet::RakString fullPath = fi->dirName + entry->d_name;             
+        if (stat(fullPath, &filestat) != 0) {
+            RAKNET_DEBUG_PRINTF("Failed to stat() \"%s\"\n",
+                fullPath.C_String());
+            continue;
+        }
 
+        if (S_ISREG(filestat.st_mode)) {
+            f->attrib = _A_NORMAL;
+        } else if (S_ISDIR(filestat.st_mode)) {
+            f->attrib = _A_SUBDIR;                    
+        } else {
+            /*
+             * We are only interested in files and directories,
+             * linkes are currently not supported.
+             */
+            continue; 
+        }
 
+        f->size = filestat.st_size;
+        strncpy(f->name, entry->d_name, _FIND_FIRST_STRING_BUFFER_SIZE);
+        return 0;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int _findnext(long h, _finddata_t *f)
-{
-	RakAssert(h >= 0 && h < (long)fileInfo.Size());
-	if (h < 0 || h >= (long)fileInfo.Size()) return -1;
-        
-	_findinfo_t* fi = fileInfo[h];
-
-	while(true)
-	{
-		dirent* entry = readdir(fi->openedDir);
-		if(entry == 0) return -1;
-
-                // Only report stuff matching our filter
-                if (fnmatch(fi->filter, entry->d_name, FNM_PATHNAME) != 0) continue;
-
-                // To reliably determine the entry's type, we must do
-                // a stat...  don't rely on entry->d_type, as this
-                // might be unavailable!
-                struct stat filestat;
-                RakNet::RakString fullPath = fi->dirName + entry->d_name;             
-                if (stat(fullPath, &filestat) != 0)
-                {
-                    RAKNET_DEBUG_PRINTF("Cannot stat %s\n", fullPath.C_String());
-                    continue;
-                }
-
-                if (S_ISREG(filestat.st_mode))
-                {
-                    f->attrib = _A_NORMAL;
-                } else if (S_ISDIR(filestat.st_mode))
-                {
-                    f->attrib = _A_SUBDIR;                    
-                } else continue; // We are interested in files and
-                                 // directories only. Links currently
-                                 // are not supported.
-
-                f->size = filestat.st_size;
-                strncpy(f->name, entry->d_name, STRING_BUFFER_SIZE);
-                
-                return 0;
-	}
-
-	return -1;
+    return -1;
 }
 
+int
+_findclose(long h) {
+    if (h == -1) {
+        return 0;
+    }
 
-
-
-
-/**
- * _findclose - equivalent
- */
-int _findclose(long h)
-{
-    if (h==-1) return 0;
-   
-    if (h < 0 || h >= (long)fileInfo.Size())
-    {
-        RakAssert(false);
+    RakAssert(h >= 0 && h < (long) fileInfo.Size());
+    if (h < 0 || h >= (long) fileInfo.Size()) {
         return -1;
     }
 
@@ -154,6 +143,8 @@ int _findclose(long h)
     closedir(fi->openedDir);
     fileInfo.RemoveAtIndex(h);
     RakNet::OP_DELETE(fi, _FILE_AND_LINE_);
+
     return 0;   
 }
+
 #endif
