@@ -9,7 +9,7 @@
 #include "RakNetTime.h"
 
 #define US_MILLION            ((RakNet::TimeUS) 1000000)
-#define RAKNET_TIME_HALF_SPAN (((RakNet::Time) -1) / ((RakNet::Time) 2));
+#define RAKNET_TIME_HALF_SPAN (((RakNet::Time) -1) / ((RakNet::Time) 2))
 
 #if defined(GET_TIME_SPIKE_LIMIT) && GET_TIME_SPIKE_LIMIT > 0
 
