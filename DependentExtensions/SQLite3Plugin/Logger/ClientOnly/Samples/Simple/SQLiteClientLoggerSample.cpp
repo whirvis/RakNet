@@ -4,7 +4,7 @@
 #include "RakSleep.h"
 
 #include "Kbhit.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "PacketizedTCP.h"
 #include "RakNetTypes.h"
 #include "rand.h"

@@ -24,7 +24,7 @@
 #include "RakSleep.h"
 #include "RakVoice.h"
 #include "RakNetStatistics.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakAssert.h"
 
 #include "fmod.hpp"

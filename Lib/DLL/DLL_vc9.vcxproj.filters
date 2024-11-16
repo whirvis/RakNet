@@ -98,7 +98,7 @@
     <ClCompile Include="..\..\Source\Gets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\GetTime.cpp">
+    <ClCompile Include="..\..\Source\RakNetTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\gettimeofday.cpp">

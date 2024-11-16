@@ -18,7 +18,7 @@
 #include "MessageIdentifiers.h"
 #include <stdio.h>
 #include "Kbhit.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakAssert.h"
 #include "RakSleep.h"
 #include "Gets.h"

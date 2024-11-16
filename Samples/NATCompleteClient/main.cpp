@@ -21,7 +21,7 @@
 #include "NatPunchthroughClient.h"
 #include "NatTypeDetectionClient.h"
 #include "Getche.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "Router2.h"
 #include "UDPProxyClient.h"
 #include "Gets.h"

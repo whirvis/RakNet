@@ -17,7 +17,7 @@
 #include "RakAssert.h"
 #include "RakNetTypes.h"
 #include "RakPeer.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "LinuxStrings.h"
 #include "SocketDefines.h"
 #if (defined(__GNUC__)  || defined(__GCCXML__)) && !defined(__WIN32__)

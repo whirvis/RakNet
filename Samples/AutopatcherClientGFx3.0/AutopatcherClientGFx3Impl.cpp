@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "Kbhit.h"
 
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakPeerInterface.h"
 #include "MessageIdentifiers.h"
 #include "BitStream.h"

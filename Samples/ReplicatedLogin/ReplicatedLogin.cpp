@@ -10,7 +10,7 @@
 
 #include "RakPeerInterface.h"
 #include "BitStream.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakSleep.h"
 #include "Gets.h"
 #include "MessageIdentifiers.h"

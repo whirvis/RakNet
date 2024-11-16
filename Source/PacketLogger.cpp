@@ -18,7 +18,7 @@
 #include "RakPeerInterface.h"
 #include "MessageIdentifiers.h"
 #include "StringCompressor.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

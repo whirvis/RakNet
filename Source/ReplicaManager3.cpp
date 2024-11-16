@@ -12,7 +12,7 @@
 #if RAKNET_SUPPORT_ReplicaManager3==1
 
 #include "ReplicaManager3.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "MessageIdentifiers.h"
 #include "RakPeerInterface.h"
 #include "NetworkIDManager.h"

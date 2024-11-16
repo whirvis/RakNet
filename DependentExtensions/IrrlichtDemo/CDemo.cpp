@@ -4,7 +4,7 @@
 #include "CDemo.h"
 
 // RakNet includes
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "MessageIdentifiers.h"
 #include "RakNetTypes.h"
 #include "Itoa.h"

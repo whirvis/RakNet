@@ -21,7 +21,7 @@
 #include "RakSleep.h"
 #include "NetworkIDObject.h"
 #include "NetworkIDManager.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "Gets.h"
 
 // This has to be a pointer, because it uses UNASSIGNED_NETWORK_ID, initialized globally

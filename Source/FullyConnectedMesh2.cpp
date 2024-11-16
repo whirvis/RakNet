@@ -19,7 +19,7 @@
 #include "RakPeerInterface.h"
 #include "MessageIdentifiers.h"
 #include "RakAssert.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "Rand.h"
 #include "DS_OrderedList.h"
 

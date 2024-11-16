@@ -24,7 +24,7 @@
 #include <stdlib.h>
 #include "Kbhit.h"
 
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakPeerInterface.h"
 #include "MessageIdentifiers.h"
 #include "BitStream.h"
@@ -44,7 +44,7 @@
 #include "CloudServerHelper.h"
 #include "HTTPConnection2.h"
 #include "Rackspace2.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 // See http://www.digip.org/jansson/doc/2.4/
 // This is used to make it easier to parse the JSON returned from the master server
 #include "jansson.h"

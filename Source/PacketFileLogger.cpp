@@ -11,7 +11,7 @@
 #include "NativeFeatureIncludes.h"
 #if RAKNET_SUPPORT_PacketLogger==1
 #include "PacketFileLogger.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 
 using namespace RakNet;
 

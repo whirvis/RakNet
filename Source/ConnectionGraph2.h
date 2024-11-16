@@ -24,7 +24,7 @@
 #include "PluginInterface2.h"
 #include "DS_List.h"
 #include "DS_WeightedGraph.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "Export.h"
 
 namespace RakNet

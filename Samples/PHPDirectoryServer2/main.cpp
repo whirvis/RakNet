@@ -17,7 +17,7 @@
 #include "PHPDirectoryServer2.h"
 #include "RakSleep.h"
 #include "RakString.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "DS_Table.h"
 #include <cstring>
 #include <cstdlib>

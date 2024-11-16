@@ -17,7 +17,7 @@
 #include "BitStream.h"
 #include "RakPeerInterface.h"
 #include <stdlib.h>
-#include "GetTime.h"
+#include "RakNetTime.h"
 
 #ifdef _DEBUG
 #include <stdio.h>

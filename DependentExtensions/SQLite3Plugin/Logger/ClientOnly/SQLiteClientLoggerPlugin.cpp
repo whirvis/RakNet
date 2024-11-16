@@ -1,7 +1,7 @@
 #include "SQLiteClientLoggerPlugin.h"
 #include "MessageIdentifiers.h"
 #include "PacketizedTCP.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 
 static const char COLUMN_NAMES_DELIMITER=',';
 static const int MAX_COLUMN_NAMES_LENGTH=512;

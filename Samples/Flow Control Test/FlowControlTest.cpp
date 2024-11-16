@@ -9,7 +9,7 @@
  */
 
 #include "RakPeerInterface.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "MessageIdentifiers.h"
 #include "RakNetStatistics.h"
 #include <cstdio>

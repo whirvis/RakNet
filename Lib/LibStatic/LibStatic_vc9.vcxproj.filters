@@ -98,9 +98,6 @@
     <ClCompile Include="..\..\Source\Gets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\GetTime.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\gettimeofday.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -315,6 +312,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\WSAStartupSingleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\RakNetTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

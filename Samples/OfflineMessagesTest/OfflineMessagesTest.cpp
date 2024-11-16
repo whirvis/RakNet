@@ -15,7 +15,7 @@
 #include <cstring> // For strlen
 #include <stdio.h>
 #include "MessageIdentifiers.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "Gets.h"
 
 #ifdef _WIN32

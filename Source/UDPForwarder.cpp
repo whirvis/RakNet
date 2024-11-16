@@ -12,7 +12,7 @@
 
 #if RAKNET_SUPPORT_UDPForwarder==1
 
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "MTUSize.h"
 #include "SocketLayer.h"
 #include "WSAStartupSingleton.h"

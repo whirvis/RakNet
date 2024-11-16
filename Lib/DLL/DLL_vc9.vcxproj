@@ -228,7 +228,7 @@
     <ClCompile Include="..\..\Source\FullyConnectedMesh2.cpp" />
     <ClCompile Include="..\..\Source\Getche.cpp" />
     <ClCompile Include="..\..\Source\Gets.cpp" />
-    <ClCompile Include="..\..\Source\GetTime.cpp" />
+    <ClCompile Include="..\..\Source\RakNetTime.cpp" />
     <ClCompile Include="..\..\Source\gettimeofday.cpp" />
     <ClCompile Include="..\..\Source\GridSectorizer.cpp" />
     <ClCompile Include="..\..\Source\HTTPConnection.cpp" />

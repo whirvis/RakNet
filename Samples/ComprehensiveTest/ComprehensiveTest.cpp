@@ -17,7 +17,7 @@
 #include "RakNetStatistics.h"
 #include "MessageIdentifiers.h"
 #include <stdio.h>
-#include "GetTime.h"
+#include "RakNetTime.h"
 using namespace RakNet;
 
 #ifdef _WIN32

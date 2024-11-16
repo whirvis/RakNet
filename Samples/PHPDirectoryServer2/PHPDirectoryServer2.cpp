@@ -25,7 +25,7 @@
 #include "RakSleep.h"
 #include "RakString.h"
 #include "RakNetTypes.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakAssert.h"
 #include <cstring>
 #include <cstdlib>

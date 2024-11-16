@@ -13,7 +13,7 @@
 #include <stdlib.h> // For atoi
 #include <cstring> // For strlen
 #include "RakNetStatistics.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "MessageIdentifiers.h"
 #include "MTUSize.h"
 #include <stdio.h>

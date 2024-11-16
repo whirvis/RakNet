@@ -17,7 +17,7 @@
 
 #include "EmailSender.h"
 #include "TCPInterface.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "Rand.h"
 #include "FileList.h"
 #include "BitStream.h"

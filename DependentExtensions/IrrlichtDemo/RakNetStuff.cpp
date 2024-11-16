@@ -13,7 +13,7 @@
 #include "NetworkIDManager.h"
 #include "CDemo.h"
 #include "RakNetTime.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "SocketLayer.h"
 
 using namespace RakNet;

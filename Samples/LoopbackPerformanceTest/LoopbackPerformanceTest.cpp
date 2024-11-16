@@ -10,7 +10,7 @@
 
 #include "RakPeerInterface.h"
 #include "MessageIdentifiers.h" // Enumerations
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakNetStatistics.h"
 #include <cstdio>
 #include <stdlib.h>

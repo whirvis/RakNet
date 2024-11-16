@@ -13,7 +13,7 @@
 
 #include "TwoWayAuthentication.h"
 #include "Rand.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "MessageIdentifiers.h"
 #include "BitStream.h"
 #include "RakPeerInterface.h"

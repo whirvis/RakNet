@@ -15,7 +15,7 @@
 
 #include "RakNetStatistics.h"
 #include <stdio.h> // sprintf
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakString.h"
 
 using namespace RakNet;

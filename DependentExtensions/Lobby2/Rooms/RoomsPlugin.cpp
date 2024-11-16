@@ -16,7 +16,7 @@
 #include "MessageIdentifiers.h"
 #include "RakPeerInterface.h"
 #include "ProfanityFilter.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 
 using namespace RakNet;
 

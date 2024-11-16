@@ -16,7 +16,7 @@
 #include "UDPProxyCommon.h"
 #include "RakPeerInterface.h"
 #include "MessageIdentifiers.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 
 using namespace RakNet;
 static const int DEFAULT_UNRESPONSIVE_PING_TIME_COORDINATOR=1000;

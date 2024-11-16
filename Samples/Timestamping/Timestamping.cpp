@@ -12,7 +12,7 @@
 
 #include "BitStream.h"
 #include "MessageIdentifiers.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakSleep.h"
 using namespace RakNet;
 

@@ -14,7 +14,7 @@
 
 
 #include "ReliabilityLayer.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "SocketLayer.h"
 #include "PluginInterface2.h"
 #include "RakAssert.h"

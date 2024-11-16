@@ -14,7 +14,7 @@
 #include "TCPInterface.h"
 #include "RakNetSocket2.h"
 #include "DynDNS.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "Base64Encoder.h"
 
 using namespace RakNet;

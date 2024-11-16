@@ -14,7 +14,7 @@
 
 #include "RakPeerInterface.h"
 
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakNetStatistics.h"
 #include "MessageIdentifiers.h"
 #include "Kbhit.h"

@@ -14,7 +14,7 @@
 #include "TeamManager.h"
 #include "BitStream.h"
 #include "MessageIdentifiers.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 
 using namespace RakNet;
 

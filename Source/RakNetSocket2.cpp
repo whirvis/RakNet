@@ -13,7 +13,7 @@
 #include "RakAssert.h"
 #include "RakSleep.h"
 #include "SocketDefines.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include <stdio.h>
 #include <string.h> // memcpy
 

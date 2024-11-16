@@ -18,7 +18,7 @@
 #include "RakPeerInterface.h"
 #include "RakPeerInterface.h"
 #include "RakNetTypes.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "BitStream.h"
 #include <assert.h>
 #include <cstdio>

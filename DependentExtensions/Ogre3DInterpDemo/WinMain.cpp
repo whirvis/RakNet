@@ -30,7 +30,7 @@
 #include "App3D.h"
 
 // RakNet includes
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakSleep.h"
 #include "RakAssert.h"
 #include "StringTable.h"

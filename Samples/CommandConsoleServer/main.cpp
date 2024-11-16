@@ -19,7 +19,7 @@
 
 #include "RakPeerInterface.h"
 #include "LogCommandParser.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakNetTransport2.h"
 #include "LinuxStrings.h"
 #include <stdio.h>

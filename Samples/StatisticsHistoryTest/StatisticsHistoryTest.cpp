@@ -14,7 +14,7 @@
 #include <cstdio>
 #include <cstring>
 #include <stdlib.h>
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakPeerInterface.h"
 #include "MessageIdentifiers.h"
 #include "StatisticsHistory.h"

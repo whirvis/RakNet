@@ -17,7 +17,7 @@
 #include "SocketIncludes.h"
 #include "RakPeerInterface.h"
 #include "MessageIdentifiers.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "BitStream.h"
 #include "SocketDefines.h"
 

@@ -15,7 +15,7 @@
 #include "RakPeerInterface.h"
 #include "BitStream.h"
 #include "RakNetTime.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "DS_OrderedList.h"
 #include "SocketLayer.h"
 #include "FormatString.h"

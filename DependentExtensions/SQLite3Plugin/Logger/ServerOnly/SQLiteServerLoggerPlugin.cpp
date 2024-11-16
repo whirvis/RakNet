@@ -6,7 +6,7 @@
 #include "jpeglib.h"
 #include "jpeg_memory_dest.h"
 #include "FileOperations.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include <time.h>
 #include <stdio.h>
 #include <sys/types.h>

@@ -1562,7 +1562,7 @@ void RakString::UnlockMutex(void)
 /*
 #include "RakString.h"
 #include <string>
-#include "GetTime.h"
+#include "RakNetTime.h"
 
 using namespace RakNet;
 

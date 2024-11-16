@@ -34,7 +34,7 @@
 #include <time.h>
 #include <ctype.h> // toupper
 #include <string.h>
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "MessageIdentifiers.h"
 #include "DS_HuffmanEncodingTree.h"
 #include "Rand.h"

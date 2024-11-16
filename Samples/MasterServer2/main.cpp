@@ -46,7 +46,7 @@ void main_sockets(void)
 #include "RakString.h"
 #include "RakSleep.h"
 #include "jansson.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 
 #define MASTER_SERVER_ADDRESS "masterserver2.raknet.com"
 #define MASTER_SERVER_PORT 80

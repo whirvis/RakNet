@@ -105,9 +105,6 @@
     <ClCompile Include="..\..\Source\Gets.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\GetTime.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\gettimeofday.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
@@ -322,6 +319,9 @@
       <Filter>RakNet</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\WSAStartupSingleton.cpp">
+      <Filter>RakNet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\RakNetTime.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
   </ItemGroup>

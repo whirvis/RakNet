@@ -13,7 +13,7 @@
 
 #include "MessageFilter.h"
 #include "RakAssert.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "MessageIdentifiers.h"
 #include "RakAssert.h"
 #include "RakPeerInterface.h"

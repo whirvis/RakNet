@@ -17,7 +17,7 @@
 #include "MessageIdentifiers.h"
 #include "Router2.h"
 #include "RakSleep.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "Rand.h"
 #include "RakAssert.h"
 #include "SocketLayer.h"

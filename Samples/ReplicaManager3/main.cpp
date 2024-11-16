@@ -23,7 +23,7 @@
 #include "RakSleep.h"
 #include "FormatString.h"
 #include "RakString.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "SocketLayer.h"
 #include "Getche.h"
 #include "Rand.h"

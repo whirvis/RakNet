@@ -11,7 +11,7 @@
 #include "RoomsContainer.h"
 #include "ProfanityFilter.h"
 #include "RakAssert.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "BitStream.h"
 #include "TableSerializer.h"
 

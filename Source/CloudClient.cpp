@@ -12,7 +12,7 @@
 #if RAKNET_SUPPORT_CloudClient==1
 
 #include "CloudClient.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "MessageIdentifiers.h"
 #include "BitStream.h"
 #include "RakPeerInterface.h"

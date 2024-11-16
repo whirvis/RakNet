@@ -19,7 +19,7 @@
 #include "RakSleep.h"
 #include "Gets.h"
 #include "Kbhit.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 
 using namespace RakNet;
 

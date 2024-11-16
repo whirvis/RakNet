@@ -1,6 +1,6 @@
 #include "SQLiteClientLogger_RNSLogger.h"
 #include "RakNetTime.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "RakNetStatistics.h"
 #include "RakPeerInterface.h"
 #include "SQLiteClientLoggerPlugin.h"

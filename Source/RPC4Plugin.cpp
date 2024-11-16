@@ -18,7 +18,7 @@
 #include "RakSleep.h"
 #include "RakNetDefines.h"
 #include "DS_Queue.h"
-//#include "GetTime.h"
+//#include "RakNetTime.h"
 
 using namespace RakNet;
 

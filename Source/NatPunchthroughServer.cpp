@@ -17,7 +17,7 @@
 #include "MessageIdentifiers.h"
 #include "RakPeerInterface.h"
 #include "MTUSize.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "PacketLogger.h"
 
 using namespace RakNet;

@@ -9,7 +9,7 @@
  */
 
 #include "RakPeerInterface.h"
-#include "GetTime.h"
+#include "RakNetTime.h"
 #include "MessageIdentifiers.h"
 #include "BitStream.h"
 #include <cstdio>
