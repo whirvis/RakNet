@@ -13,8 +13,7 @@
 extern "C" {
 #endif
 
-char *
-Gets(char *str, int num);
+char * Gets(char *str, int num);
 
 #ifdef __cplusplus
 }
