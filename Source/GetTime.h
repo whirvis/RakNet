@@ -20,7 +20,7 @@ namespace RakNet {
      * 
      * @details
      * This holds the time in either a 32-bit or 64-bit variables,
-     * depending on #GET_TIME_64BIT.
+     * depending on #RAKNET_GET_TIME_64BIT.
      */
     RAK_DLL_EXPORT RakNet::Time GetTime();
 

@@ -2079,7 +2079,7 @@ void RakPeer::Ping( const SystemAddress target )
 // Description:
 // Send a ping to the specified unconnected system.
 // The remote system, if it is Initialized, will respond with ID_UNCONNECTED_PONG.
-// The final ping time will be encoded in the following sizeof(RakNet::TimeMS) bytes.  (Default is 4 bytes - See __GET_TIME_64BIT in RakNetTypes.h
+// The final ping time will be encoded in the following sizeof(RakNet::TimeMS) bytes.  (Default is 4 bytes - See RAKNET_GET_TIME_64BIT in RakNetTypes.h
 //
 // Parameters:
 // host: Either a dotted IP address or a domain name.  Can be 255.255.255.255 for LAN broadcast.

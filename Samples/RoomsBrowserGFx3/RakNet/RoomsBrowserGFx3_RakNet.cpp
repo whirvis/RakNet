@@ -238,7 +238,7 @@ PluginReceiveResult RoomsBrowserGFx3_RakNet::OnReceive(Packet *packet)
 			bsIn.Read(pingResponse);
 			RakNet::TimeMS elapsedPing=RakNet::GetTimeMS()-pingResponse;
 			RakNet::TimeMS elapsedPingMs;
-#if __GET_TIME_64BIT==1
+#if RAKNET_GET_TIME_64BIT==1
 			elapsedPingMs=elapsedPing/1000;
 #else
 			elapsedPingMs=elapsedPing;

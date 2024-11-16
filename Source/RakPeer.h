@@ -355,7 +355,7 @@ public:
 	void Ping( const SystemAddress target );
 
 	/// \brief Send a ping to the specified unconnected system. 
-	/// \details The remote system, if it is Initialized, will respond with ID_PONG followed by sizeof(RakNet::TimeMS) containing the system time the ping was sent. Default is 4 bytes - See __GET_TIME_64BIT in RakNetTypes.h
+	/// \details The remote system, if it is Initialized, will respond with ID_PONG followed by sizeof(RakNet::TimeMS) containing the system time the ping was sent. Default is 4 bytes - See RAKNET_GET_TIME_64BIT in RakNetTypes.h
 	/// System should reply with ID_PONG if it is active
 	/// \param[in] host Either a dotted IP address or a domain name.  Can be 255.255.255.255 for LAN broadcast.
 	/// \param[in] remotePort Which port to connect to on the remote machine.
