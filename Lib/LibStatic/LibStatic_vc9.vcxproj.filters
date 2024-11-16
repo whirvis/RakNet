@@ -176,9 +176,6 @@
     <ClCompile Include="..\..\Source\RakNetCommandParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\RakNetSocket.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\RakNetSocket2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -599,9 +596,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\RakNetSmartPtr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\RakNetSocket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\RakNetSocket2.h">

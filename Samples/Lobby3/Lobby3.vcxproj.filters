@@ -183,9 +183,6 @@
     <ClCompile Include="..\..\Source\RakNetCommandParser.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\RakNetSocket.cpp">
-      <Filter>RakNet</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\RakNetSocket2.cpp">
       <Filter>RakNet</Filter>
     </ClCompile>
@@ -603,9 +600,6 @@
       <Filter>RakNet</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\RakNetSmartPtr.h">
-      <Filter>RakNet</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\RakNetSocket.h">
       <Filter>RakNet</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\RakNetSocket2.h">
