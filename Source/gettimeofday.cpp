@@ -1,69 +1,57 @@
 /*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
+ * Copyright (c) 2014, Oculus VR, Inc.
+ * All rights reserved.
  *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  */
-
-#if defined(_WIN32) && !defined(__GNUC__)  &&!defined(__GCCXML__)
-
 #include "gettimeofday.h"
 
-// From http://www.openasthra.com/c-tidbits/gettimeofday-function-for-windows/
+/*
+ * This was originally taken from http://www.openasthra.com/c-tidbits/gettimeofday-function-for-windows/,
+ * (before modification) but the link now seems to be dead. But now, at the time of writing, it points to
+ * a gambling website.
+ */
 
+#if defined(_WIN32) && !defined(__GNUC__) && !defined(__GCCXML__)
+
+#include "NativeTypes.h"
 #include "WindowsIncludes.h"
 
-#if defined(_MSC_VER) || defined(_MSC_EXTENSIONS)
-  #define DELTA_EPOCH_IN_MICROSECS  11644473600000000Ui64
-#else
-  #define DELTA_EPOCH_IN_MICROSECS  11644473600000000ULL
-#endif
+#define DELTA_EPOCH_IN_MICROSECS 11644473600000000ULL
 
-int gettimeofday(struct timeval *tv, struct timezone *tz)
-{
-#if defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT)
-	// _tzset not supported
-	(void) tv;
-	(void) tz;
-#else
+int
+gettimeofday(struct timeval *tv, struct timezone *tz) {
+    static int tzflag = 0;
 
-  FILETIME ft;
-  unsigned __int64 tmpres = 0;
-  static int tzflag;
+    if (tv) {
+        FILETIME ft;
+        GetSystemTimeAsFileTime(&ft);
 
-  if (NULL != tv)
-  {
-    GetSystemTimeAsFileTime(&ft);
+        uint64_t tmpres = 0;
 
-    tmpres |= ft.dwHighDateTime;
-    tmpres <<= 32;
-    tmpres |= ft.dwLowDateTime;
+        tmpres |= ft.dwHighDateTime;
+        tmpres <<= 32;
+        tmpres |= ft.dwLowDateTime;
 
-    /*converting file time to unix epoch*/
-    tmpres /= 10;  /*convert into microseconds*/
-    tmpres -= DELTA_EPOCH_IN_MICROSECS;
-    tv->tv_sec = (long)(tmpres / 1000000UL);
-    tv->tv_usec = (long)(tmpres % 1000000UL);
-  }
-
-  if (NULL != tz)
-  {
-    if (!tzflag)
-    {
-      _tzset();
-      tzflag++;
+        /* convert file time to unix epoch */
+        tmpres /= 10; /* convert to microseconds */
+        tmpres -= DELTA_EPOCH_IN_MICROSECS;
+        tv->tv_sec = tmpres / 1000000UL;
+        tv->tv_usec = tmpres % 1000000UL;
     }
-    tz->tz_minuteswest = _timezone / 60;
-    tz->tz_dsttime = _daylight;
-  }
 
-#endif
+    if (tz) {
+        if (!tzflag) {
+            _tzset();
+            tzflag++;
+        }
+        tz->tz_minuteswest = _timezone / 60;
+        tz->tz_dsttime = _daylight;
+    }
 
-  return 0;
+    return 0;
 }
 
-#endif
-
+#endif /* defined(_WIN32) && !defined(__GNUC__)  &&!defined(__GCCXML__) */
