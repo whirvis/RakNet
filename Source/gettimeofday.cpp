@@ -23,7 +23,7 @@
 
 int
 gettimeofday(struct timeval *tv, struct timezone *tz) {
-    static int tzflag = 0;
+    static bool initialized_tz = false;
 
     if (tv) {
         FILETIME ft;
@@ -43,9 +43,9 @@ gettimeofday(struct timeval *tv, struct timezone *tz) {
     }
 
     if (tz) {
-        if (!tzflag) {
+        if (!initialized_tz) {
             _tzset();
-            tzflag++;
+            initialized_tz = true;
         }
         tz->tz_minuteswest = _timezone / 60;
         tz->tz_dsttime = _daylight;
