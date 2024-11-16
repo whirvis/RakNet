@@ -1,27 +1,16 @@
 /*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
+ * Copyright (c) 2014, Oculus VR, Inc.
+ * All rights reserved.
  *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  */
-
-/// \file
-///
-
+#include "SecureHandshake.h"
 
 #include "NativeFeatureIncludes.h"
 
-#if LIBCAT_SECURITY==1
-
-// If building a RakNet DLL, be sure to tweak the CAT_EXPORT macro meaning
-#if !defined(_RAKNET_LIB) && defined(_RAKNET_DLL)
-# define CAT_BUILD_DLL
-#else
-# define CAT_NEUTER_EXPORT
-#endif
+#if LIBCAT_SECURITY == 1
 
 #include "cat/src/port/EndianNeutral.cpp"
 #include "cat/src/port/AlignedAlloc.cpp"
@@ -59,4 +48,4 @@
 
 #include "cat/src/crypt/tunnel/EasyHandshake.cpp"
 
-#endif // LIBCAT_SECURITY
+#endif
