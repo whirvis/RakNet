@@ -38,6 +38,12 @@ int gettimeofday(struct timeval *tv, struct timezone *tz);
 //
 //#ifdef __cplusplus
 //
+///*
+// * Don't use a define here, otherwise anyone including this file
+// * will have this defined even if they don't want or need it.
+// */
+//static const int DELTA_EPOCH_IN_MICROSECS = 11644473600000000ULL;
+//
 //void GetSystemTimeAsFileTime(FILETIME *);
 //
 //inline int
@@ -49,7 +55,7 @@ int gettimeofday(struct timeval *tv, struct timezone *tz);
 //
 //    GetSystemTimeAsFileTime(&now.ft);
 //    p->tv_usec = (now.ns100 / 10LL) % 1000000LL;
-//    p->tv_sec = (now.ns100 - 116444736000000000LL) / 10000000LL;
+//    p->tv_sec = (now.ns100 - DELTA_EPOCH_IN_MICROSECS) / 10000000LL;
 //    
 //    return 0;
 //}
