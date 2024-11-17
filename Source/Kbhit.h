@@ -1,84 +1,97 @@
-/*****************************************************************************
-kbhit() and getch() for Linux/UNIX
-Chris Giese <geezer@execpc.com>	http://my.execpc.com/~geezer
-Release date: ?
-This code is public domain (no copyright).
-You can do whatever you want with it.
-*****************************************************************************/
+/*
+ * Copyright (c) 2014, Oculus VR, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+#ifndef RAKNET_KBHIT_H
+#define RAKNET_KBHIT_H
+
+/*
+ * Chris Giese <geezer@execpc.com>
+ * http://my.execpc.com/~geezer
+ * This code is in the public domain.
+ */
+
 #if defined(_WIN32)
-#include <conio.h> /* kbhit(), getch() */
+
+#include <conio.h>
 
 #else
-#include <sys/time.h> /* struct timeval, select() */
-/* ICANON, ECHO, TCSANOW, struct termios */
-#include <termios.h> /* tcgetattr(), tcsetattr() */
-#include <stdlib.h> /* atexit(), exit() */
-#include <unistd.h> /* read() */
-#include <stdio.h> /* printf() */
-#include <string.h> /* memcpy */
 
-static struct termios g_old_kbd_mode;
-/*****************************************************************************
-*****************************************************************************/
-static void cooked(void)
-{
-	tcsetattr(0, TCSANOW, &g_old_kbd_mode);
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include <sys/time.h>
+#include <termios.h>
+#include <unistd.h>
+
+static struct termios old_kbd_mode;
+
+static void
+cooked(void) {
+    tcsetattr(0, TCSANOW, &old_kbd_mode);
 }
-/*****************************************************************************
-*****************************************************************************/
-static void raw(void)
-{
-	static char init;
-/**/
-	struct termios new_kbd_mode;
 
-	if(init)
-		return;
-/* put keyboard (stdin, actually) in raw, unbuffered mode */
-	tcgetattr(0, &g_old_kbd_mode);
-	memcpy(&new_kbd_mode, &g_old_kbd_mode, sizeof(struct termios));
-	new_kbd_mode.c_lflag &= ~(ICANON /*| ECHO */ );
-	new_kbd_mode.c_cc[VTIME] = 0;
-	new_kbd_mode.c_cc[VMIN] = 1;
-	tcsetattr(0, TCSANOW, &new_kbd_mode);
-/* when we exit, go back to normal, "cooked" mode */
-	atexit(cooked);
+static void
+raw(void) {
+    static bool initialized = false;
 
-	init = 1;
+    if(initialized) {
+	return;
+    }
+
+    tcgetattr(0, &old_kbd_mode);
+    struct termios new_kbd_mode;
+    memcpy(&new_kbd_mode, &old_kbd_mode, sizeof(old_kbd_mode));
+
+    /* put stdin into raw, unbuffered mode */
+    new_kbd_mode.c_lflag &= ~(ICANON /* | ECHO */ );
+    new_kbd_mode.c_cc[VTIME] = 0;
+    new_kbd_mode.c_cc[VMIN] = 1;
+    tcsetattr(0, TCSANOW, &new_kbd_mode);
+
+    /* when we exit, go back to normal, "cooked" mode */
+    atexit(cooked);
+
+    initialized = true;
 }
-/*****************************************************************************
-*****************************************************************************/
-static int kbhit(void)
-{
-	struct timeval timeout;
-	fd_set read_handles;
-	int status;
 
-	raw();
-/* check stdin (fd 0) for activity */
-	FD_ZERO(&read_handles);
-	FD_SET(0, &read_handles);
-	timeout.tv_sec = timeout.tv_usec = 0;
-	status = select(0 + 1, &read_handles, NULL, NULL, &timeout);
-	if(status < 0)
-	{
-		printf("select() failed in kbhit()\n");
-		exit(1);
-	}
-	return status;
-}
-/*****************************************************************************
-*****************************************************************************/
-static int getch(void)
-{
-	unsigned char temp;
+static int 
+kbhit(void) {
+    static struct timeval timeout = { 0 };
 
-	raw();
-/* stdin = fd 0 */
-	if(read(0, &temp, 1) != 1)
-		return 0;
-	return temp;
+    raw();
+
+    /* check stdin for activity */
+    fd_set read_handles;
+    FD_ZERO(&read_handles);
+    FD_SET(stdin, &read_handles);
+
+    int status = select(1, &read_handles, NULL, NULL, &timeout);
+    if(status < 0) {
+	printf("select() failed in kbhit()\n");
+	exit(1);
+    }
+
+    return status;
 }
+
+static int
+getch(void) {
+    raw();
+
+    unsigned char temp;
+    if(read(stdin, &temp, 1) != 1){
+	return 0;
+    }
+
+    return temp;
+}
+
 #endif
 
-
+#endif /* RAKNET_KBHIT_H */
