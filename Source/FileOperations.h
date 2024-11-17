@@ -1,32 +1,32 @@
 /*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
+ * Copyright (c) 2014, Oculus VR, Inc.
+ * All rights reserved.
  *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  */
-
-/// \file FileOperations.h
-///
-
+#ifndef RAKNET_FILE_OPERATIONS_H
+#define RAKNET_FILE_OPERATIONS_H
 
 #include "NativeFeatureIncludes.h"
-#if RAKNET_SUPPORT_FileOperations==1
 
-#ifndef __FILE_OPERATIONS_H
-#define __FILE_OPERATIONS_H
+#if RAKNET_SUPPORT_FileOperations == 1
 
 #include "Export.h"
 
-bool RAK_DLL_EXPORT WriteFileWithDirectories( const char *path, char *data, unsigned dataLength );
-bool RAK_DLL_EXPORT IsSlash(unsigned char c);
-void RAK_DLL_EXPORT AddSlash( char *input );
-void RAK_DLL_EXPORT QuoteIfSpaces(char *str);
-bool RAK_DLL_EXPORT DirectoryExists(const char *directory);
-unsigned int RAK_DLL_EXPORT GetFileLength(const char *path);
+RAK_DLL_EXPORT bool WriteFileWithDirectories(const char *path, char *data, unsigned dataLength);
 
-#endif
+RAK_DLL_EXPORT bool IsSlash(unsigned char c);
 
-#endif // RAKNET_SUPPORT_FileOperations
+RAK_DLL_EXPORT void AddSlash(char *input);
+
+RAK_DLL_EXPORT void QuoteIfSpaces(char *str);
+
+RAK_DLL_EXPORT bool DirectoryExists(const char *directory);
+
+RAK_DLL_EXPORT unsigned int GetFileLength(const char *path);
+
+#endif /* RAKNET_SUPPORT_FileOperations */
+
+#endif /* RAKNET_FILE_OPERATIONS_H */
