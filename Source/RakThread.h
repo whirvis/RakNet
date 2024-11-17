@@ -1,106 +1,78 @@
 /*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
+ * Copyright (c) 2014, Oculus VR, Inc.
+ * All rights reserved.
  *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  */
-
-#ifndef __RAK_THREAD_H
-#define __RAK_THREAD_H
-
-#if defined(_WIN32_WCE)
-#include "WindowsIncludes.h"
-#endif
-
-
-
-
+#ifndef RAKNET_THREAD_H
+#define RAKNET_THREAD_H
 
 #include "Export.h"
+#include "WindowsIncludes.h"
 
-
-
-
-
-
-#if defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT)
-#include "../DependentExtensions/WinPhone8/ThreadEmulation.h"
-using namespace ThreadEmulation;
-#endif
-
-namespace RakNet
-{
-/// To define a thread, use RAK_THREAD_DECLARATION(functionName);
-#if defined(_WIN32_WCE) || defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT)
-#define RAK_THREAD_DECLARATION(functionName) DWORD WINAPI functionName(LPVOID arguments)
-
-
-#elif defined(_WIN32)
-#define RAK_THREAD_DECLARATION(functionName) unsigned __stdcall functionName( void* arguments )
-
-
+/*
+ * TODO: The whole point of RakThread is to allow for easy multiplatform
+ *  thread creation, but defines different return values for start rotines
+ *  on each different platform... Doesn't that defeat the entire point?
+ * 
+ * I really do not like the RAK_THREAD_DECLARATION define, it's completely
+ * unnecessary should be replaced with a proper wrapper function used to
+ * start all threads under RakNet.
+ */
+#if defined(_WIN32)
+typedef unsigned (__stdcall *RakThreadStartRoutine)(void *);
+#define RAK_THREAD_DECLARATION(_func) unsigned __stdcall _func(void *arguments)
+#elif defined(_WIN32_WCE)
+typedef LPTHREAD_START_ROUTINE RakThreadStartRoutine;
+#define RAK_THREAD_DECLARATION(_func) DWORD WINAPI _func(LPVOID arguments)
 #else
-#define RAK_THREAD_DECLARATION(functionName) void* functionName( void* arguments )
+typedef void * (*RakThreadStartRoutine)(void *)
+#define RAK_THREAD_DECLARATION(_func) void * _func(void *arguments)
 #endif
 
-class RAK_DLL_EXPORT RakThread
-{
+namespace RakNet {
+
+class RAK_DLL_EXPORT RakThread {
 public:
 
+    /*
+     * TODO: All these methods are static and there's no instances...
+     *  shouldn't RakThread be a namespace rather than a class ?
+     */
 
-
-
-	/// Create a thread, simplified to be cross platform without all the extra junk
-	/// To then start that thread, call RakCreateThread(functionName, arguments);
-	/// \param[in] start_address Function you want to call
-	/// \param[in] arglist Arguments to pass to the function
-	/// \return 0=success. >0 = error code
-
-	/*
-	nice value 	Win32 Priority
-	-20 to -16 	THREAD_PRIORITY_HIGHEST
-	-15 to -6 	THREAD_PRIORITY_ABOVE_NORMAL
-	-5 to +4 	THREAD_PRIORITY_NORMAL
-	+5 to +14 	THREAD_PRIORITY_BELOW_NORMAL
-	+15 to +19 	THREAD_PRIORITY_LOWEST
-	*/
-#if defined(_WIN32_WCE) || defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT)
-	static int Create( LPTHREAD_START_ROUTINE start_address, void *arglist, int priority=0);
-
-
-#elif defined(_WIN32)
-	static int Create( unsigned __stdcall start_address( void* ), void *arglist, int priority=0);
-
-
-
-#else
-	static int Create( void* start_address( void* ), void *arglist, int priority=0);
-#endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /*!
+     * @brief
+     * Creates a thread.
+     *
+     * @details
+     * This is simplified to be cross platform, without all the extra junk.
+     * Thread entrypoints can be declared via #RAK_THREAD_DECLARATION.
+     *
+     * Below is a table of some nice values for the priority parameter.
+     * | Values         | Win32 priority                 |
+     * | -------------- | ------------------------------ |
+     * | `-20` to `-16` | `THREAD_PRIORITY_HIGHEST`      |
+     * | `-15` to `-6`  | `THREAD_PRIORITY_ABOVE_NORMAL` |
+     * | `-5`  to `+4`  | `THREAD_PRIORITY_NORMAL`       |
+     * | `+5`  to `+14` | `THREAD_PRIORITY_BELOW_NORMAL` |
+     * | `+15` to `+19` | `THREAD_PRIORITY_LOWEST`       |
+     *
+     * @param[in] start_routine The function from which to start the thread.
+     * @param[in] arguments     The arguments to pass for creation.
+     * @param[in] priority      The thread priority.
+     *
+     * @return Zero on success, anything else otherwise.
+     */
+    static int Create(
+        RakThreadStartRoutine start_routine,
+        void *arguments = nullptr,
+        int priority = 0
+     );
 
 };
 
 }
 
-#endif
+#endif /* RAKNET_THREAD_H */
