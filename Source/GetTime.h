@@ -16,4 +16,4 @@
 
 #include "RakNetTime.h"
 
-#endif
+#endif /* RAKNET_TIME_LEGACY_H */
