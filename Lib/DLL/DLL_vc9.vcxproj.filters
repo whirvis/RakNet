@@ -565,9 +565,6 @@
     <ClInclude Include="..\..\Source\PacketOutputWindowLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\PacketPool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\PacketPriority.h">
       <Filter>Header Files</Filter>
     </ClInclude>

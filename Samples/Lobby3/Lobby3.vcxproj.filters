@@ -569,9 +569,6 @@
     <ClInclude Include="..\..\Source\PacketOutputWindowLogger.h">
       <Filter>RakNet</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\PacketPool.h">
-      <Filter>RakNet</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\PacketPriority.h">
       <Filter>RakNet</Filter>
     </ClInclude>

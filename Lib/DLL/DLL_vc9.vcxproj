@@ -385,7 +385,6 @@
     <ClInclude Include="..\..\Source\PacketizedTCP.h" />
     <ClInclude Include="..\..\Source\PacketLogger.h" />
     <ClInclude Include="..\..\Source\PacketOutputWindowLogger.h" />
-    <ClInclude Include="..\..\Source\PacketPool.h" />
     <ClInclude Include="..\..\Source\PacketPriority.h" />
     <ClInclude Include="..\..\Source\PluginInterface2.h" />
     <ClInclude Include="..\..\Source\Rackspace.h" />
